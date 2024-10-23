@@ -1,476 +1,486 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
-#include <string>
 #include <algorithm>
-#include <map>
+#include <string>
 #include <queue>
-#include <stdexcept>p
-#include <stdint.h>
+#include <unordered_map>
+#include <sstream>
+#include <iterator>
+#include <numeric>
 
-// Helper to write bits to file
-class BitWriter {
-    std::ofstream &out;
-    uint8_t buffer;
-    int bit_count;
+using namespace std;
 
-public:
-    explicit BitWriter(std::ofstream &outFile) : out(outFile), buffer(0), bit_count(0) {}
-
-    void writeBit(bool bit) {
-        buffer |= bit << (7 - bit_count);
-        ++bit_count;
-        if (bit_count == 8) {
-            out.put(buffer);
-            bit_count = 0;
-            buffer = 0;
+// Function to find a suitable EOF character
+char findEOFChar(const string& data) {
+    vector<bool> charExists(256, false);
+    for (char c : data) {
+        charExists[(unsigned char)c] = true;
+    }
+    for (int i = 1; i < 256; ++i) { // Start from 1 to avoid using '\0'
+        if (!charExists[i]) {
+            return (char)i;
         }
     }
-
-    void writeBits(uint32_t bits, int length) {
-        for (int i = length - 1; i >= 0; --i) {
-            writeBit((bits >> i) & 1);
-        }
-    }
-
-    void flush() {
-        if (bit_count > 0) {
-            out.put(buffer);
-            bit_count = 0;
-            buffer = 0;
-        }
-    }
-};
-
-// Helper to read bits from file
-class BitReader {
-    std::ifstream &in;
-    uint8_t buffer;
-    int bit_count;
-
-public:
-    explicit BitReader(std::ifstream &inFile) : in(inFile), buffer(0), bit_count(0) {}
-
-    bool readBit() {
-        if (bit_count == 0) {
-            buffer = in.get();
-            if (in.eof()) {
-                throw std::runtime_error("Unexpected EOF in BitReader");
-            }
-            bit_count = 8;
-        }
-        bool bit = (buffer >> (bit_count - 1)) & 1;
-        --bit_count;
-        return bit;
-    }
-
-    uint32_t readBits(int length) {
-        uint32_t value = 0;
-        for (int i = 0; i < length; ++i) {
-            value = (value << 1) | readBit();
-        }
-        return value;
-    }
-};
-
-// Efficient Burrows-Wheeler Transform using Suffix Array
-std::pair<std::string, int> burrows_wheeler_transform(const std::string &input) {
-    int n = input.size();
-    std::vector<int> suffix_array(n);
-
-    // Initialize suffix array
-    for (int i = 0; i < n; ++i) {
-        suffix_array[i] = i;
-    }
-
-    // Sort suffixes
-    std::sort(suffix_array.begin(), suffix_array.end(), [&input, n](int a, int b) {
-        return strcmp(input.c_str() + a, input.c_str() + b) < 0;
-    });
-
-    // Build BWT result from last characters of sorted suffixes
-    std::string bwt;
-    bwt.reserve(n);
-    int primary_index = -1;
-    for (int i = 0; i < n; ++i) {
-        if (suffix_array[i] == 0) {
-            primary_index = i;
-            bwt += input[n - 1];
-        } else {
-            bwt += input[suffix_array[i] - 1];
-        }
-    }
-
-    return {bwt, primary_index};
+    cerr << "No suitable EOF character found!" << endl;
+    exit(1);
 }
 
-// Inverse Burrows-Wheeler Transform
-std::string inverse_burrows_wheeler_transform(const std::string &bwt, int primary_index) {
-    int n = bwt.size();
-    std::vector<int> count(256, 0);
-    std::vector<int> next(n);
+// Structure to store the BWT result
+struct BWTResultat {
+    string transformertData;
+    int rotasjonsIndeks;
+};
 
-    // Count occurrences
-    for (char c : bwt) {
-        ++count[(unsigned char)c];
+// Function to read the content of a file as binary data
+string lesFil(const string& filnavn) {
+    ifstream fil(filnavn, ios::binary);
+    if (!fil) {
+        cerr << "Could not open file: " << filnavn << endl;
+        exit(1);
     }
+    string innhold((istreambuf_iterator<char>(fil)), istreambuf_iterator<char>());
+    return innhold;
+}
 
-    // Cumulative counts
-    std::vector<int> cumulative_count(256, 0);
-    int sum = 0;
-    for (int i = 0; i < 256; ++i) {
-        cumulative_count[i] = sum;
-        sum += count[i];
+// Function to write data to a file as binary data
+void skrivFil(const string& filnavn, const string& data) {
+    ofstream fil(filnavn, ios::binary);
+    if (!fil) {
+        cerr << "Could not write to file: " << filnavn << endl;
+        exit(1);
     }
+    fil.write(data.data(), data.size());
+}
 
-    // Build next array
+// Build suffix array
+vector<int> buildSuffixArray(const string& s) {
+    int n = s.size();
+    vector<int> sa(n), ranks(n), tmp(n);
+
+    // Initial ranking based on the first character
     for (int i = 0; i < n; ++i) {
-        char c = bwt[i];
-        next[cumulative_count[(unsigned char)c]++] = i;
+        sa[i] = i;
+        ranks[i] = (unsigned char)s[i];
     }
 
-    // Reconstruct the original string
-    std::string original;
-    original.resize(n);
-    int idx = next[primary_index];
+    for (int k = 1; k < n; k <<= 1) {
+        auto cmp = [&](int i, int j) {
+            if (ranks[i] != ranks[j])
+                return ranks[i] < ranks[j];
+            int ri = (i + k < n) ? ranks[i + k] : -1;
+            int rj = (j + k < n) ? ranks[j + k] : -1;
+            return ri < rj;
+        };
+        sort(sa.begin(), sa.end(), cmp);
+
+        tmp[sa[0]] = 0;
+        for (int i = 1; i < n; ++i) {
+            tmp[sa[i]] = tmp[sa[i - 1]] + (cmp(sa[i - 1], sa[i]) ? 1 : 0);
+        }
+        ranks = tmp;
+        if (ranks[sa[n - 1]] == n - 1)
+            break; // All ranks are unique
+    }
+    return sa;
+}
+
+// Efficient Burrows-Wheeler Transform function
+BWTResultat burrowsWheelerTransform(const string& input) {
+    int n = input.size();
+    vector<int> sa = buildSuffixArray(input);
+
+    // Generate BWT from suffix array
+    string bwt(n, '\0');
+    int rotationIndex = -1;
+    for (int i = 0; i < n; ++i) {
+        if (sa[i] == 0)
+            rotationIndex = i;
+        bwt[i] = input[(sa[i] + n - 1) % n];
+    }
+    return {bwt, rotationIndex};
+}
+
+// Inverse Burrows-Wheeler Transform function
+string inversBurrowsWheelerTransform(const string& bwt, int rotasjonsIndeks) {
+    int n = bwt.size();
+    vector<int> count(256, 0);
+
+    // Count occurrence of each character in bwt
+    for (int i = 0; i < n; ++i) {
+        count[(unsigned char)bwt[i]]++;
+    }
+
+    // Compute cumulative counts
+    vector<int> cumulativeCount(256, 0);
+    for (int i = 1; i < 256; ++i) {
+        cumulativeCount[i] = cumulativeCount[i - 1] + count[i - 1];
+    }
+
+    // Build rank array
+    vector<int> rank(n, 0);
+    vector<int> tally(256, 0);
+    for (int i = 0; i < n; ++i) {
+        rank[i] = tally[(unsigned char)bwt[i]];
+        tally[(unsigned char)bwt[i]]++;
+    }
+
+    // Build LF mapping
+    vector<int> LF(n, 0);
+    for (int i = 0; i < n; ++i) {
+        LF[i] = cumulativeCount[(unsigned char)bwt[i]] + rank[i];
+    }
+
+    // Reconstruct original string in reverse order
+    string original(n, '\0');
+    int idx = rotasjonsIndeks;
     for (int i = n - 1; i >= 0; --i) {
         original[i] = bwt[idx];
-        idx = next[idx];
+        idx = LF[idx];
     }
 
     return original;
 }
 
-// Move-to-Front Encoding using linked list for efficiency
-std::vector<int> move_to_front_encode(const std::string &bwt) {
-    std::vector<int> mtfEncoded;
-    mtfEncoded.reserve(bwt.size());
+// Move-to-Front Encoding function
+vector<uint8_t> moveToFrontEncoding(const string& input) {
+    vector<uint8_t> alfabet(256);
+    iota(alfabet.begin(), alfabet.end(), 0);
 
-    std::vector<uint8_t> symbolTable(256);
-    for (int i = 0; i < 256; ++i) {
-        symbolTable[i] = i;
-    }
+    vector<uint8_t> output;
+    output.reserve(input.size());
 
-    for (unsigned char c : bwt) {
-        int index = 0;
-        while (symbolTable[index] != c) {
+    for (unsigned char c : input) {
+        uint8_t index = 0;
+        while (alfabet[index] != c) {
             ++index;
         }
-        mtfEncoded.push_back(index);
+        output.push_back(index);
 
-        // Move to front
-        while (index > 0) {
-            symbolTable[index] = symbolTable[index - 1];
-            --index;
-        }
-        symbolTable[0] = c;
+        // Move the found character to the front
+        alfabet.erase(alfabet.begin() + index);
+        alfabet.insert(alfabet.begin(), c);
     }
 
-    return mtfEncoded;
+    return output;
 }
 
-// Move-to-Front Decoding
-std::string move_to_front_decode(const std::vector<int> &mtf) {
-    std::string decoded;
-    decoded.reserve(mtf.size());
+// Move-to-Front Decoding function
+string moveToFrontDecoding(const vector<uint8_t>& input) {
+    vector<uint8_t> alfabet(256);
+    iota(alfabet.begin(), alfabet.end(), 0);
 
-    std::vector<uint8_t> symbolTable(256);
-    for (int i = 0; i < 256; ++i) {
-        symbolTable[i] = i;
+    string output;
+    output.reserve(input.size());
+
+    for (uint8_t index : input) {
+        unsigned char c = alfabet[index];
+        output += c;
+
+        // Move the found character to the front
+        alfabet.erase(alfabet.begin() + index);
+        alfabet.insert(alfabet.begin(), c);
     }
 
-    for (int index : mtf) {
-        unsigned char c = symbolTable[index];
-        decoded += c;
-
-        // Move to front
-        while (index > 0) {
-            symbolTable[index] = symbolTable[index - 1];
-            --index;
-        }
-        symbolTable[0] = c;
-    }
-
-    return decoded;
+    return output;
 }
 
-// Huffman Tree node
-struct HuffmanNode {
-    int symbol;
-    uint64_t freq;
-    HuffmanNode *left;
-    HuffmanNode *right;
+// Node class for the Huffman tree
+struct Node {
+    uint8_t tegn;
+    uint64_t frekvens;
+    Node* venstre;
+    Node* hoyre;
 
-    HuffmanNode(int s, uint64_t f) : symbol(s), freq(f), left(nullptr), right(nullptr) {}
+    Node(uint8_t t, uint64_t f) : tegn(t), frekvens(f), venstre(nullptr), hoyre(nullptr) {}
+    Node(Node* v, Node* h) : tegn(0), frekvens(v->frekvens + h->frekvens), venstre(v), hoyre(h) {}
 };
 
-// Comparator for the priority queue
-struct Compare {
-    bool operator()(HuffmanNode *left, HuffmanNode *right) {
-        return left->freq > right->freq;
-    }
-};
-
-// Huffman Encoding
-class HuffmanEncoder {
-    std::map<int, std::vector<bool>> huffmanCode;
-
-    void buildCode(HuffmanNode *root, std::vector<bool> &code) {
-        if (!root) return;
-
-        if (root->symbol != -1) {
-            huffmanCode[root->symbol] = code;
-        } else {
-            code.push_back(false);
-            buildCode(root->left, code);
-            code.pop_back();
-
-            code.push_back(true);
-            buildCode(root->right, code);
-            code.pop_back();
-        }
-    }
-
-public:
-    explicit HuffmanEncoder(const std::map<int, uint64_t> &freq) {
-        // Build Huffman Tree
-        std::priority_queue<HuffmanNode *, std::vector<HuffmanNode *>, Compare> pq;
-
-        for (auto pair : freq) {
-            pq.push(new HuffmanNode(pair.first, pair.second));
-        }
-
-        if (pq.empty()) {
-            return;
-        }
-
-        while (pq.size() > 1) {
-            HuffmanNode *left = pq.top();
-            pq.pop();
-            HuffmanNode *right = pq.top();
-            pq.pop();
-
-            auto *newNode = new HuffmanNode(-1, left->freq + right->freq);
-            newNode->left = left;
-            newNode->right = right;
-            pq.push(newNode);
-        }
-
-        std::vector<bool> code;
-        buildCode(pq.top(), code);
-    }
-
-    const std::map<int, std::vector<bool>> &getHuffmanCode() const {
-        return huffmanCode;
+// Comparison function for the priority queue
+struct NodeCompare {
+    bool operator()(Node* a, Node* b) {
+        return a->frekvens > b->frekvens;
     }
 };
 
-// Huffman Decoding
-class HuffmanDecoder {
-    HuffmanNode *root;
+// Builds the Huffman tree from the frequency table
+Node* byggHuffmanTre(const vector<uint64_t>& frekvenser) {
+    priority_queue<Node*, vector<Node*>, NodeCompare> pq;
 
-public:
-    explicit HuffmanDecoder(const std::map<int, uint64_t> &freq) {
-        // Build Huffman Tree
-        std::priority_queue<HuffmanNode *, std::vector<HuffmanNode *>, Compare> pq;
-
-        for (auto pair : freq) {
-            pq.push(new HuffmanNode(pair.first, pair.second));
-        }
-
-        if (pq.empty()) {
-            root = nullptr;
-            return;
-        }
-
-        while (pq.size() > 1) {
-            HuffmanNode *left = pq.top();
-            pq.pop();
-            HuffmanNode *right = pq.top();
-            pq.pop();
-
-            auto *newNode = new HuffmanNode(-1, left->freq + right->freq);
-            newNode->left = left;
-            newNode->right = right;
-            pq.push(newNode);
-        }
-
-        root = pq.top();
-    }
-
-    std::vector<int> decode(BitReader &reader, uint64_t numSymbols) {
-        std::vector<int> decoded;
-        decoded.reserve(numSymbols);
-
-        if (!root) {
-            return decoded;
-        }
-
-        for (uint64_t i = 0; i < numSymbols; ++i) {
-            HuffmanNode *node = root;
-            while (node->left || node->right) {
-                bool bit;
-                try {
-                    bit = reader.readBit();
-                } catch (const std::runtime_error &e) {
-                    throw std::runtime_error("Error during Huffman decoding: " + std::string(e.what()));
-                }
-                node = bit ? node->right : node->left;
-                if (!node) {
-                    throw std::runtime_error("Invalid Huffman code encountered during decoding.");
-                }
-            }
-            decoded.push_back(node->symbol);
-        }
-        return decoded;
-    }
-};
-
-// Compression Function
-void compress(const std::string &inputFile, const std::string &outputFile) {
-    // Step 1: Read input file
-    std::ifstream inFile(inputFile, std::ios::binary);
-    if (!inFile) {
-        std::cerr << "Cannot open input file: " << inputFile << std::endl;
-        return;
-    }
-    std::string input((std::istreambuf_iterator<char>(inFile)), std::istreambuf_iterator<char>());
-    inFile.close();
-
-    // Handle empty input
-    if (input.empty()) {
-        std::ofstream outFile(outputFile, std::ios::binary);
-        uint64_t numSymbols = 0;
-        outFile.write(reinterpret_cast<const char *>(&numSymbols), sizeof(numSymbols));
-        for (int i = 0; i < 256; ++i) {
-            uint64_t frequency = 0;
-            outFile.write(reinterpret_cast<const char *>(&frequency), sizeof(frequency));
-        }
-        outFile.close();
-        return;
-    }
-
-    // Step 2: Efficient Burrows-Wheeler Transform
-    auto [bwt, primary_index] = burrows_wheeler_transform(input);
-
-    // Step 3: Efficient Move-to-Front Encoding
-    std::vector<int> mtfEncoded = move_to_front_encode(bwt);
-
-    // Step 4: Compute frequencies
-    std::map<int, uint64_t> freq;
-    for (int symbol : mtfEncoded) {
-        freq[symbol]++;
-    }
-
-    // Step 5: Build Huffman tree
-    HuffmanEncoder huffman(freq);
-    const auto &huffmanCode = huffman.getHuffmanCode();
-
-    // Step 6: Write frequencies and symbol count
-    std::ofstream outFile(outputFile, std::ios::binary);
-    if (!outFile) {
-        std::cerr << "Cannot open output file: " << outputFile << std::endl;
-        return;
-    }
-
-    // Write number of symbols (uint64_t)
-    uint64_t numSymbols = mtfEncoded.size();
-    outFile.write(reinterpret_cast<const char *>(&numSymbols), sizeof(numSymbols));
-
-    // Write primary index for inverse BWT
-    outFile.write(reinterpret_cast<const char *>(&primary_index), sizeof(primary_index));
-
-    // Write frequencies
-    for (int i = 0; i < 256; ++i) {
-        uint64_t frequency = freq[i];
-        outFile.write(reinterpret_cast<const char *>(&frequency), sizeof(frequency));
-    }
-
-    // Step 7: Write Huffman encoded symbols
-    BitWriter writer(outFile);
-    for (int symbol : mtfEncoded) {
-        const auto &code = huffmanCode.at(symbol);
-        for (bool bit : code) {
-            writer.writeBit(bit);
+    for (uint16_t i = 0; i < 256; ++i) {
+        if (frekvenser[i] > 0) {
+            pq.push(new Node(static_cast<uint8_t>(i), frekvenser[i]));
         }
     }
-    writer.flush(); // Ensure all bits are written
 
-    outFile.close();
+    if (pq.empty()) {
+        return nullptr;
+    }
+
+    while (pq.size() > 1) {
+        Node* venstre = pq.top(); pq.pop();
+        Node* hoyre = pq.top(); pq.pop();
+        Node* forelder = new Node(venstre, hoyre);
+        pq.push(forelder);
+    }
+
+    return pq.top();
 }
 
-// Decompression Function
-void decompress(const std::string &compressedFile, const std::string &outputFile) {
-    std::ifstream inFile(compressedFile, std::ios::binary);
-    if (!inFile) {
-        std::cerr << "Cannot open compressed file: " << compressedFile << std::endl;
+// Builds the code table from the Huffman tree
+void byggKoder(Node* rot, vector<string>& koder, string kode) {
+    if (!rot->venstre && !rot->hoyre) {
+        koder[rot->tegn] = kode;
         return;
     }
+    byggKoder(rot->venstre, koder, kode + "0");
+    byggKoder(rot->hoyre, koder, kode + "1");
+}
 
-    // Read number of symbols
-    uint64_t numSymbols;
-    inFile.read(reinterpret_cast<char *>(&numSymbols), sizeof(numSymbols));
+// Frees the memory used by the Huffman tree
+void slettTre(Node* rot) {
+    if (!rot) return;
+    slettTre(rot->venstre);
+    slettTre(rot->hoyre);
+    delete rot;
+}
 
-    // Read primary index for inverse BWT
-    int primary_index;
-    inFile.read(reinterpret_cast<char *>(&primary_index), sizeof(primary_index));
-
-    // Read frequencies
-    std::map<int, uint64_t> freq;
-    for (int i = 0; i < 256; ++i) {
-        uint64_t frequency;
-        inFile.read(reinterpret_cast<char *>(&frequency), sizeof(frequency));
-        freq[i] = frequency;
+// Performs Huffman encoding
+vector<uint8_t> huffmanKoding(const vector<uint8_t>& input, vector<string>& koder, string& frekvensData, uint32_t& bitLength) {
+    // Calculate frequencies
+    vector<uint64_t> frekvenser(256, 0);
+    for (uint8_t c : input) {
+        frekvenser[c]++;
     }
 
     // Build Huffman tree
-    HuffmanDecoder huffmanDecoder(freq);
+    Node* rot = byggHuffmanTre(frekvenser);
 
-    // Use BitReader starting from the current position
-    BitReader reader(inFile);
-
-    // Decode Huffman data
-    std::vector<int> mtfDecoded;
-    try {
-        mtfDecoded = huffmanDecoder.decode(reader, numSymbols);
-    } catch (const std::runtime_error &e) {
-        std::cerr << "Decompression error: " << e.what() << std::endl;
-        return;
+    // Handle empty or single character case
+    if (!rot) {
+        return {};
     }
 
-    inFile.close();
+    // Build code table
+    koder.resize(256);
+    byggKoder(rot, koder, "");
 
-    // MTF Decoding
-    std::string bwtDecoded = move_to_front_decode(mtfDecoded);
-
-    // Inverse BWT
-    std::string original = inverse_burrows_wheeler_transform(bwtDecoded, primary_index);
-
-    // Write the decompressed data to the output file
-    std::ofstream outFile(outputFile, std::ios::binary);
-    if (!outFile) {
-        std::cerr << "Cannot open output file: " << outputFile << std::endl;
-        return;
+    // Encode the data
+    string kodetStreng;
+    kodetStreng.reserve(input.size()); // To avoid frequent reallocations
+    for (uint8_t c : input) {
+        kodetStreng += koder[c];
     }
-    outFile.write(original.data(), original.size());
-    outFile.close();
+
+    // Store the total number of bits
+    bitLength = kodetStreng.size();
+
+    // Create frequency data for storage
+    stringstream ss;
+    for (uint16_t i = 0; i < 256; ++i) {
+        if (frekvenser[i] > 0) {
+            ss << i << ' ' << frekvenser[i] << ' ';
+        }
+    }
+    frekvensData = ss.str();
+
+    // Convert bit string to bytes
+    vector<uint8_t> komprimertData;
+    komprimertData.reserve((kodetStreng.size() + 7) / 8);
+    uint8_t byte = 0;
+    int bitsFyllt = 0;
+    for (char bit : kodetStreng) {
+        byte = (byte << 1) | (bit - '0');
+        bitsFyllt++;
+        if (bitsFyllt == 8) {
+            komprimertData.push_back(byte);
+            bitsFyllt = 0;
+            byte = 0;
+        }
+    }
+    if (bitsFyllt > 0) {
+        byte <<= (8 - bitsFyllt);
+        komprimertData.push_back(byte);
+    }
+
+    slettTre(rot);
+    return komprimertData;
+}
+
+// Performs Huffman decoding
+vector<uint8_t> huffmanDekoding(const vector<uint8_t>& kodetData, vector<string>& koder, const string& frekvensData, uint32_t bitLength) {
+    // Rebuild the frequency table
+    vector<uint64_t> frekvenser(256, 0);
+    stringstream ss(frekvensData);
+    uint16_t tegn;
+    uint64_t frekvens;
+    while (ss >> tegn >> frekvens) {
+        frekvenser[tegn] = frekvens;
+    }
+
+    // Build Huffman tree
+    Node* rot = byggHuffmanTre(frekvenser);
+
+    // Handle empty or single character case
+    if (!rot) {
+        return {};
+    }
+
+    // Build decode table
+    unordered_map<string, uint8_t> dekodeTabell;
+    koder.resize(256);
+    byggKoder(rot, koder, "");
+    for (uint16_t i = 0; i < 256; ++i) {
+        if (!koder[i].empty()) {
+            dekodeTabell[koder[i]] = static_cast<uint8_t>(i);
+        }
+    }
+
+    // Reconstruct the bitstring up to the valid bit length
+    string bitstring;
+    bitstring.reserve(bitLength);
+    int bitsRead = 0;
+    for (uint8_t byte : kodetData) {
+        for (int i = 7; i >= 0 && bitsRead < bitLength; --i) {
+            bitstring += ((byte >> i) & 1) ? '1' : '0';
+            bitsRead++;
+        }
+    }
+
+    vector<uint8_t> output;
+    output.reserve(bitLength / 8); // Approximate size
+    string kode;
+    for (char bit : bitstring) {
+        kode += bit;
+        if (dekodeTabell.count(kode)) {
+            output.push_back(dekodeTabell[kode]);
+            kode.clear();
+        }
+    }
+
+    slettTre(rot);
+    return output;
+}
+
+// Compresses the input file and saves it as the output file
+void komprimer(const string& inputFilnavn, const string& outputFilnavn) {
+    // Read data from file
+    string data = lesFil(inputFilnavn);
+
+    // Find EOF character
+    char EOF_char = findEOFChar(data);
+
+    // Append EOF character
+    data += EOF_char;
+
+    // Perform BWT
+    BWTResultat bwtResultat = burrowsWheelerTransform(data);
+
+    // Perform Move-to-Front Encoding
+    vector<uint8_t> mtfData = moveToFrontEncoding(bwtResultat.transformertData);
+
+    // Perform Huffman encoding
+    vector<string> koder;
+    string frekvensData;
+    uint32_t bitLength; // Variable to store the bit length
+    vector<uint8_t> komprimertData = huffmanKoding(mtfData, koder, frekvensData, bitLength);
+
+    // Save rotation index, frequency data, bit length, EOF character, and compressed data to file
+    ofstream fil(outputFilnavn, ios::binary);
+    if (!fil) {
+        cerr << "Could not write to file: " << outputFilnavn << endl;
+        exit(1);
+    }
+    // Write rotation index
+    fil.write(reinterpret_cast<const char*>(&bwtResultat.rotasjonsIndeks), sizeof(bwtResultat.rotasjonsIndeks));
+
+    // Write length of frequency data
+    uint32_t frekvensDataLengde = frekvensData.size();
+    fil.write(reinterpret_cast<const char*>(&frekvensDataLengde), sizeof(frekvensDataLengde));
+
+    // Write frequency data
+    fil.write(frekvensData.data(), frekvensData.size());
+
+    // Write bit length
+    fil.write(reinterpret_cast<const char*>(&bitLength), sizeof(bitLength));
+
+    // Write EOF character
+    fil.write(&EOF_char, sizeof(EOF_char));
+
+    // Write compressed data
+    fil.write(reinterpret_cast<const char*>(komprimertData.data()), komprimertData.size());
+
+    fil.close();
+}
+
+// Decompresses the input file and recreates the output file
+void dekomprimer(const string& inputFilnavn, const string& outputFilnavn) {
+    // Read compressed data from file
+    ifstream fil(inputFilnavn, ios::binary);
+    if (!fil) {
+        cerr << "Could not open file: " << inputFilnavn << endl;
+        exit(1);
+    }
+
+    // Read rotation index
+    int rotasjonsIndeks;
+    fil.read(reinterpret_cast<char*>(&rotasjonsIndeks), sizeof(rotasjonsIndeks));
+
+    // Read length of frequency data
+    uint32_t frekvensDataLengde;
+    fil.read(reinterpret_cast<char*>(&frekvensDataLengde), sizeof(frekvensDataLengde));
+
+    // Read frequency data
+    string frekvensData(frekvensDataLengde, '\0');
+    fil.read(&frekvensData[0], frekvensDataLengde);
+
+    // Read the bit length
+    uint32_t bitLength;
+    fil.read(reinterpret_cast<char*>(&bitLength), sizeof(bitLength));
+
+    // Read EOF character
+    char EOF_char;
+    fil.read(&EOF_char, sizeof(EOF_char));
+
+    // Read the rest as compressed data
+    vector<uint8_t> komprimertData((istreambuf_iterator<char>(fil)), istreambuf_iterator<char>());
+    fil.close();
+
+    // Perform Huffman decoding
+    vector<string> koder;
+    vector<uint8_t> mtfData = huffmanDekoding(komprimertData, koder, frekvensData, bitLength);
+
+    // Perform Move-to-Front Decoding
+    string bwtData = moveToFrontDecoding(mtfData);
+
+    // Perform inverse BWT
+    string originalData = inversBurrowsWheelerTransform(bwtData, rotasjonsIndeks);
+
+    // Remove EOF character from the end
+    if (!originalData.empty() && originalData.back() == EOF_char) {
+        originalData.pop_back();
+    }
+
+    // Write decompressed data to file
+    skrivFil(outputFilnavn, originalData);
 }
 
 int main() {
-    // Compress the input file
-    compress("input.txt", "compressed.dat");
+    string inputFil = "input.txt";
+    string komprimertFil = "komprimert.dat";
+    string dekomprimertFil = "dekomprimert.txt";
 
-    // Decompress the compressed file
-    decompress("compressed.dat", "decompressed.txt");
+    komprimer(inputFil, komprimertFil);
+    dekomprimer(komprimertFil, dekomprimertFil);
 
-    std::cout << "Compression and decompression of 'input.txt' completed." << std::endl;
 
-    // Compress the enwik8 file
-    compress("enwik8.txt", "compressedenwik8.dat");
+    string inputFil2 = "diverse.lyx";
+    string komprimertFil2 = "komprimert2.dat";
+    string dekomprimertFil2 = "dekomprimert2.lyx";
 
-    // Decompress the compressed enwik8 file
-    decompress("compressedenwik8.dat", "decompressedenwik8.txt");
+    komprimer(inputFil2, komprimertFil2);
+    dekomprimer(komprimertFil2, dekomprimertFil2);
 
-    std::cout << "Compression and decompression of 'enwik8.txt' completed." << std::endl;
+
     return 0;
 }
