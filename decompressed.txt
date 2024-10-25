@@ -1,0 +1,390 @@
+[97]#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document[16,8][135]header
+\save_transient_properties true
+\origin unavailable
+\textclass beamerntnu
+\begin_preamble
+\usepackage{colortbl}
+
+\let\Bbbk\relax[39,13][109]mtpro2}
+
+\usetheme[slogan=norsk,style=vertical]{NTNU}
+% Added by lyx2lyx
+\setlength{\parskip}{\medskipamount}[37,16][18]indent}{0pt}
+\end_[203,10][38]options aspectratio=169
+\use_default_o[37,7][39]false
+\begin_modules
+logicalmkup
+\end_m[25,7][49]\maintain_unincluded_children no
+\language norsk
+[16,9][49]_package default
+\inputencoding auto-legacy
+\font[26,13][40]
+\font_roman "default" "TeX Gyre Termes"[40,7][5]sans [39,11][10]Open Sans"[73,7][11]typewriter [78,20][25]Cursor"
+\font_math "auto"[7,6][23]"
+\font_default_family [218,9][31]use_non_tex_fonts true
+\font_sc[372,8][1]f[211,9][5]_osf [22,12][5]sans_[21,16][1]t[181,9][1]_[48,17][24]f_scale 100 100
+\font_tt[23,16][55]use_microtype true
+\use_dash_ligatures true
+\graphics d[436,8][1]d[574,8][14]utput_format d[467,8][29]output_sync 0
+\bibtex_command[506,12][1]d[23,20][46]paperfontsize 12
+\spacing single
+\use_hyperref[698,8][11]papersize d[384,12][8]geometry[228,11][17]package amsmath 0[23,17][5]symb [23,15][9]cancel 1
+[68,13][5]esint[66,16][8]mathdots[45,16][10]mathtools [25,16][6]hchem [92,15][6]stackr[116,18][8]stmaryrd[140,16][31]undertilde 1
+\cite_engine basic[19,13][7]_type d[900,8][31]biblio_style plain
+\use_bibtopi[683,9][11]use_indices[376,13][58]orientation portrait
+\suppress_date false
+\justification t[634,9][31]refstyle 0
+\use_formatted_ref 0[691,8][97]nted 0
+\use_lineno 0
+\index Register
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocd[12,8][28]paragraph_separation indent
+[29,11][13]indentation d[1235,9][35]s_math_indent 0
+\math_numbering_sid[1282,11][98]quotes_style swiss
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tables[20,15][14]racking_change[1533,9][8]output_c[22,14][10]change_bar[500,10][68]ostpone_fragile_content false
+\html_math_output 0
+\html_css_as_file [20,8][31]be_strict false
+\docbook_table_[66,10][1]d[24,7][40]mathml_prefix 1
+\end_header
+
+\begin_body[13,9][88]layout Title
+Tekstsøk,
+ Datakompresjon
+\end_layout
+
+\begin_layout Author
+Helge Hafting
+[48,27][10]Institute
+[10,8][34]t for datateknologi og informatikk[128,28][9]Section
+T[190,8][1]
+[173,27][4]Fram[1996,9][74]inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Anvendelser for t[123,23][10]end_inset
+[382,9][25]inset Separator latexpar
+[45,14][1]e[367,18][9]deeper
+\b[333,13][10]temize
+Fri[133,9][38] i dokumenter,
+ nettsider og lignende
+[418,28][1]t[85,22][9]atabaser
+[60,35][12]Søkemotorer[48,41][31] etter repeterte strenger for d[659,41][19]Itemize
+DNA-matchin[659,16][5]end_d[338,20][9]Standard
+[433,23][8]parbreak[433,34][1]l[627,76][22]En enkel naiv algoritm[455,16][1]e[625,97][7]Descrip[882,10][11]:
+ rabarbra[856,14][44]space \hspace*{\fill}
+\end_inset
+
+(lengde n)[1120,28][1]D[114,11][12]Søkeord:
+ b[112,58][1]m[112,29][7]Only
+\b[1058,20][1]1[1058,41][5]
+1-6
+[1037,25][47]Skyv søkeordet langs teksten,
+ se om det passe[1013,9][1]i[1085,86][55]tegn som passer,
+ vises med 
+\series bold
+fet skrift
+\e[1088,33][34]første feil med 
+\emph on
+kursiv
+[1157,35][19]dobbeltløkke for 
+[1471,13][13]Formula $n-m$[1350,13][18] posisjoner,
+ og 
+[57,22][1]m[55,15][6]tegn i[416,11][4].
+ 
+[1086,120][1]O[654,69][3]7-7[1691,26][16]Hele greia,
+ 
+\b[349,20][30]O\left(n\cdot m\right),\Omega\[28,7][7]right)$[1306,41][1]S[1387,21][11]Flex Only
+s[1935,39][1]\[941,66][1]1[1978,40][100]Tabular
+<lyxtabular version="3" rows="2" columns="9">
+<features tabularvalignment="middle">
+<column [28,11][10]center" va[48,10][16]top" width="0pt"[57,53][4]1em"[57,56][1]"[114,113][1]"[228,227][15]">
+<row>
+<cell [517,36][34]bottomline="true" usebox="none">
+\[699,13][4]ext
+[2624,15][1]P[2775,12][5]Fors�[2757,27][7]</cell>[161,61][5]leftl[177,72][1]r[171,170][1]a[342,170][1]b[342,341][1]r[513,341][1]r[1026,205][8]/row>
+<r[1542,46][1]u[1524,60][1]0[1518,75][1]l[1500,76][1]
+[3116,9][1]b[163,152][1]r[316,152][1]a[469,155][1]n[621,151][1]n[304,303][1]n[608,182][8]/row>
+</[3519,10][1]>[5545,16][1]e[5571,37][1]F[3751,114][3]2-2[3751,175][1]>[3739,2108][1]1[3270,307][1]m[3891,312][1]
+[7400,13][1]a[3905,642][1]/[3753,187][3]3-3[3753,2284][1]2[7023,458][1]s[10989,11][1]b[7963,162][1]r[7810,643][1]/[7506,187][3]4-4[7506,2284][1]3[10776,611][1]m[11701,159][1]
+[15057,13][1]r[11715,491][1]/[11259,187][3]5-5[11259,2284][1]4[14529,763][1]m[15606,499][1]/[14998,187][1]6[19690,28][1]
+[14998,2257][1]5[18268,794][1]c[11701,286][1]s[7800,164][1]
+[15624,48][1]/[18769,187][1]7[22807,28][1]
+[22520,51][1]7[18769,141][1]>[18859,89][1]>[180,179][1]>[19129,47][1]r[22412,2920][1]r[20052,1392][1]r[17692,1392][1]r[15332,1392][1]r[12972,1378][1]r[10612,1464][1]e[34567,188][10]Boyer-Moor[34555,114][14]Itemize
+Se på[33997,11][22]siste 
+\emph default
+t[33862,11][15]teksten først
+[35195,35][31]Hvis det ikke passer,
+ flytt s�[84,11][1]
+[135,10][15]å langt vi kan[145,15][1]
+[35458,86][1]S[35120,21][1]T[33575,37][1]5[11055,585][1]
+[33460,1669][1]b[29559,307][9]emph on
+a[11048,1217][1]n[1683,955][1]/[28726,573][1]e[3214,804][1]/[26352,726][1]n[18860,735][1]d[43127,28][41]Hvis det passer,
+ se på nestsiste osv.
+\[42876,189][26]Regelen om upassende tegn
+[43503,120][22]Hvis tegnet ikke fins [8302,14][16],
+ kan vi flytte[42239,40][10]steg frem:[41916,50][1]T[41758,37][1]4[41758,11][4]15">[19239,445][1]c[19644,269][1]r[8454,295][1]m[42085,170][1]e[42256,170][1]t[342,341][1]o[42769,341][1]i[855,341][1]t[43453,170][1]s[1368,512][1]i[44137,170][1]n[42940,302][1]s[43093,152][1]t[43246,152][1]e[43399,152][1]i[43552,162][1]n[24978,914][1]e[18656,602][1]1[26496,912][1]s[3053,1264][1]/[11308,723][1]
+[29397,925][1]s[44854,166][1]t[45021,166][1]e[45188,166][1]i[45355,166][1]n[29731,82][1]b[10483,32][17]fins til venstre [52654,12][1],[10488,16][37]ordet så det passer med teksten 
+\en[54028,32][47]Vi har vi en tabell for hvor mye vi kan flytte
+[54110,35][11]I praksis e[82,14][56]ele alfabetet,
+ hvor de fleste tegn gir et flytt på 
+\b[52956,35][14].
+ (Regel om 
+[54535,13][12]Quotes cld
+\[54456,11][1]u[10993,15][1]b[51,19][1]r[51,14][1])[54364,36][41]Tabellen lager vi ved å pre-prosessere s[19264,11][1]
+[88,36][9]egn som f[11026,21][18]gir kortere flytt
+[54680,94][6]En 
+\b[359,34][1]s[346,37][23] i siste posisjon gir f[517,33][3]-1$[54880,13][8],
+ fordi[795,8][8]tarter p[584,17][1]Q[174,60][1]
+[11853,47][1]\[53719,21][1]\[53347,12][10]/m\right)$[53738,14][23]for søket.
+ Mye bedre![54772,191][1]U[11885,13][10],
+ fortsat[1896,26][1]
+[11896,196][1],[55596,95][17]hvis mismatch var[20431,55][1]
+[55619,35][5]med m[107,8][1]p[20534,13][11]nestsiste 
+[20538,19][1]k[12219,37][1]-[985,15][6] steg
+[55771,35][1]v[152,16][28]nestnestsiste,
+ flytter vi 
+[1110,24][1]2[12346,20][1]o[12784,65][1]T[54115,37][1]3[12357,3552][1]m[12204,305][1]
+[12051,162][1]e[8393,1522][1]e[12356,755][1]m[14952,305][1]n[58504,162][1]e[14952,1098][1]/[10002,68][42]Vi trenger altså en todimensjonal tabell:[9445,98][15]indeks er det u[20774,13][1]e[63021,37][32]Den andre indeksen er posisjonen[8573,51][26]Verdien i cellen er hvor l[28966,11][17] flytte fremover
+[64040,26][1]e[9280,192][14]lage tabellen
+[64684,112][16]LyX-Code
+For hve[478,10][3] p [9051,42][1]L[71,8][3]   [74,8][21]t tegn x i alfabetet
+[68,39][17]   let mot start [29621,16][4]ra p[77,43][30]hvis vi finner x etter i steg,[150,43][17]sett Tab[p][x] = [19251,16][1]b[134,35][17]ikke finner x,
+ T[80,8][3]=p+[63221,20][1]d[21912,176][21] om passende endelse
+[65415,112][1]S[29957,986][1]e[19622,205][1]c[19793,170][1]c[513,477][1]e[64614,170][1]
+[63416,301][1]e[5218,1110][1]/[61056,419][1]e[6749,958][1]/[29956,574][1]m[7974,161][1]s[17079,46][1]c[17580,286][1]e[43790,450][1]
+[67111,761][1]s[18960,178][1]n[1714,353][1]/[19112,68][10]0,1:
+ Når[18348,16][9]treffer 
+[18808,36][1]n[18795,37][28],
+ kan vi bare flytte ett st[17417,38][28]2:
+ Feil i første posisjon
+[73395,94][1]R[19080,96][11] lar oss ba[284,14][4]hakk[30442,48][1]R[19254,45][1]p[8337,17][1]b[176,43][18]flytte to hakk her[73646,36][1]\[73941,12][3]ERT[72876,42][9]{}
+\end_l[73912,33][1]Q[685,23][1]e[19135,38][6]passet[72589,20][1]Q[19582,22][1]e[90,40][23]overlapper med seg selv[19930,39][14]slår opp båd[30506,16][1]Q[658,74][4]og p[539,52][46],
+ og bruker regelen som gir det lengste hoppe[72881,125][1]F[74594,69][1]P[9170,15][10],
+ tabell
+[74594,120][10]Tabellen f[73347,17][1]Q[1029,75][1]
+[74792,94][20]index er hvor mange [73727,14][1]t[19007,38][1]r[10586,41][1]
+[31828,47][27]Lages ved å prøve ut om s[39756,12][1]o[1010,24][1]b[75112,92][48]ofte gjør den ikke det,
+ og vi får lange hopp![10830,85][7]lain
+\e[74879,108][16]Galil sin regel
+[40544,40][1]b[31948,39][17]vi søker etter 
+[21148,36][3]aaa[20791,40][1]
+[80,39][6]aaa…[2428,40][17]har vi dessverre [74046,45][1]$[74414,14][1]
+[75765,49][64]søkeordet passer overalt,
+ de samme a-ene sjekkes flere ganger
+[32749,47][59]Galil fant en måte å unngå unødvendige sammenligninger:[75985,50][15]Når vi flytter[75054,12][23]kortere enn den delen a[75090,13][83]vi allerede har sjekket,
+ trenger vi ikke sjekke det overlappende området omigjen.[76082,36][62]Korte flytt skjer fordi søkeordet delvis matcher seg selv.
+ H[40948,13][39]hadde passet,
+ hadde vi flyttet lenger.[74907,64][1]T[20333,50][1]2[32690,582][1]r[72934,107][1]T[22593,21][1]e[72940,136][1].[73093,152][1].[306,305][1]O[73552,152][1]l[73389,305][1]l[73695,305][1].[74317,91][6]rightl[1394,148][1]r[154,112][1]/[74791,114][12]Mismatch O/a[74333,456][1]l[41493,317][1]s[78615,11][1]l[71382,321][1]s[334,333][1]e[1925,166][1]
+[1924,152][1]
+[76714,148][6]Nytt f[78243,81][1]l[76256,684][1]\[7908,57][29]
+\backslash
+cellcolor{orange}[81847,28][1]s[2024,164][1]\[280,126][1]a[280,279][1]l[560,432][1]l[4289,169][1]a[4289,153][1]
+[29200,102][20]Programmet trenger i[7120,13][27]n oransje regionen omigjen
+[19087,37][5]rmed:[81681,34][1]r[28304,20][1]o[82029,25][1]\[28367,40][1]t[83540,27][1]d[83129,171][6]Lenker[83737,121][28]Boyer og Moore sin artikkel:[18445,109][26]Flex URL
+status collapsed
+[83923,15][1]P[83016,13][57]http://www.cs.utexas.edu/~moore/publications/fstrpos.pdf
+[49154,65][18]Itemize
+Wikipedia:[304,125][1]o[83315,33][12]https://en.w[180,8][44].org/wiki/Boyer_moore_string_search_algorith[39572,26][1]
+[41240,48][29]Animasjon (Fyll ut,
+ og velg [49348,11][1])[83763,48][13]Trenger java
+[399,162][1]:[698,9][45]pitt.edu/~kirk/cs1501/animations/String.html
+[700,73][19]Demonstrasjon på M[1031,9][9]nettside:[283,128][1]u[981,10][55]users/moore/best-ideas/string-searching/fstrpos-example[310,58][1]e[84743,25][13]ection
+Mer om[84860,43][1]F[41843,70][17]un-length coding
+[85338,120][14]Enkleste form [85128,54][49]En serie repetisjoner erstattes med et antall:
+\e[85502,47][26]ABIIIIIIIIIIIIBBBCDEFFFGH [30549,24][11]rightarrow$[84276,14][15]AB12I3BCDE3FGH
+[86008,27][7]Pause
+
+[42546,47][28]I praksis litt mer kompliser[84565,22][1]d[85752,28][42]det kan jo være sifre i det vi komprimere[85686,37][15]ser vanligvis p[30992,40][4]byte[31170,38][9],
+ ikke 
+[31612,36][6]tekst
+[31083,51][1]b[30347,21][40]å kunne skille mellom data og metadata
+[86141,41][1]P[514,32][1]e[43072,32][32]Eks.,
+ bruker negativ byte for u[447,9][11]te sekvense[10318,52][1]A[801,74][31][-2]AB[12]I[3]B[-3]CDE[3]F[-2]G[819,29][35]Itemize
+25 byte ble redusert til 16[382,108][10]Kan ikke k[806,9][19] ABABABABABAB…
+\e[3197,190][10]mpel-Ziv k[87245,24][1]e[86949,105][17]Leser gjennom fil[876,22][1]l[32808,15][25]nput kopieres til output
+[51784,40][35]en lang nok sekvens kommer omigjen:[87199,95][39]dropp den,
+ skriv heller en referanse t[219,45][57]format:
+ repeter X tegn,
+ som vi har sett Y tegn tidliger[12434,49][45]Hjelper hvis sekvensen er lenger enn en slik [207,9][1]
+[87334,40][33]r bakover i et sirkulært buffer
+[87467,35][12]Output kan k[1779,9][29]s videre med Huffman-koding 
+[52744,191][7]akover-[573,9][1]r[87931,121][27]Må være 
+\emph on
+kompakt[88053,95][47]ellers kan vi ikke referere til korte strenger
+[86962,36][18].eks.
+ 2–3 byte
+[45074,47][2]Å[33521,39][1]e[14788,40][5]ngt b[801,9][48]datastrømmen,
+ gir større sjanse for å finne [2930,12][1].[88453,95][27]men også lenger kjøretid
+[88430,35][40]påvirker formatet på referansene våre[88650,95][33]1 byte kan peke 255 tegn bakover
+[15445,36][1] [68,14][5]65
+\b[88091,18][10]thinspace{[88088,14][3]536[115,49][1]3[183,15][5]16
+\b[115,42][3]777[163,45][4]215 [278,27][1]e[2821,44][9]I blant k[968,11][1]k[3256,9][1]
+[1214,98][17]derfor også ha e[13278,11][3]si:[53936,37][18]er kommer X bytes [3005,13][1]d[3161,24][1]l[89143,15][18]lik informasjon ta[153,8][6]plass![24991,203][4]Hva [1969,15][1]?[89665,121][10]Vurdering:[54590,96][38]kal dette være en del av en større u[3578,10][7] blokk?[4456,37][6]vt.
+ b[2076,10][23] + header for kortere u[93,16][1]
+[5207,49][1]t[4189,15][19] må altså være l[2587,10][18]samlet lengde for:[2073,96][1]n[261,12][1]e[2703,41][1]h[300,10][5]en uk[295,63][1]V[291,14][13]ikke svært k[2203,13][20],
+ det hjelper ikke![90032,192][8]ksempel
+[5304,121][15]ksempeltekst:
+\[55293,94][13]Problemer,
+ p[12,8][10].
+ Alltid [19,9][1]![91004,14][9]Newline n[8,6][1]
+[90930,12][39]Dette er dagens problem.
+ Problemet er
+[80,41][5]å ko[4328,9][19]problematisk tekst.[47869,48][1]E[354,12][13] med avstande[993,89][1]S[368,19][1]\[89870,21][5]^{10}[89872,16][9]roblemer
+[52,24][1]2[52,16][1].[451,10][1]
+[105,24][1]3[105,16][1]r[493,50][1]
+[198,24][1]4[198,16][1]D[535,9][1]
+[250,24][1]5[250,16][1]a[577,9][1]
+[302,24][1]6[302,16][1]l[619,10][1]
+[355,24][1]7[355,16][1]e[661,51][1]
+[449,24][1]8[449,16][1]k[2581,23][1]F[501,10][1]9[501,24][1]a[89895,15][1]F[553,12][1]0[554,15][1]i[788,11][1]b[606,23][1]1[607,16][1]
+[48700,47][43]110 tegn,
+ inkludert linjeskift og blanke.
+[1547,332][1] [1193,817][1]K[6789,9][1]:[27711,96][5][12]P[2379,12][31][-11,8][8].
+ Alltid[-18,10][17][2383,58][25][-27,7][2].
+ [-65,8][17]t[2388,58][12][-35,8][12]a[2391,59][29]Før komprimering,
+ 110 tegn.[92042,17][1]b[5523,21][35]ed 1 byte per tallkode,
+ 84 tegn.
+\[58125,94][36]Vi sparte 110-84=26 tegn,
+ eller 23%[50541,48][15]se også Lz-dem[48279,20][1]d[93394,171][1]K[5405,23][1]e[94005,106][73]or hver tegnposisjon i input,
+ må vi søke etter lengste match i buffere[3133,17][1]b[94117,21][10]il med 
+\b[92865,21][1]$[92808,18][5],
+ si[6672,15][17] med størrelse 
+[39931,39][1]\[39742,36][10]ste alle p[92989,12][13]i verste fall[92708,32][5]m^{2}[92685,49][1]I[40215,17][51]går det bedre,
+ særlig hvis data varierer en del
+[18339,36][9]an bruke [59468,11][21] tekstsøk for bedre [6078,9][1].[11139,318][15]Lempel og Ziv s[11138,137][1]o[10435,47][78]duke.edu/courses/spring03/cps296.5/papers/ziv_lempel_1977_universal_algorithm.[11172,276][21]Lempel
+\backslash
+%E2[15,13][6]80
+\ba[30,9][3]93Z[94278,17][1]e[10489,63][1]t[1838,150][23]ombinere LZ og Huffmann[8909,122][25]Z leser input,
+ og skrive[95776,22][1]d[95935,28][1]b[8143,32][1]b[10158,22][13]kvenser med u[9773,12][1]t[52638,22][1]d[96068,28][1]u[65,16][18] telles opp,
+ og k[8539,29][8]nkoding
+[12720,191][23]ZW – Lempel Ziv Welsh[9526,122][62]igner LZ.
+ Teoretisk samme kompresjon.
+ Lettere å speede opp.[96489,36][18]Leser ett og ett t[53213,18][1]b[12894,21][40]ygger en ordliste (dictionary) underveis[95637,51][39]il å begynne med,
+ alle 1-byte «ord»[3423,49][71]inn et (lengst mulig) ord,
+ skriv ordnummeret (med færrest mulig bits![96180,22][1]d[96933,28][40]lagre nytt «ord» = dette ordet + neste[958,53][49]Kompresjon hvis ordene blir lengre enn numrene
+\e[534,34][11]ZW+Huffman [11592,48][1]
+[95443,18][5]Noun
+[97378,40][8]Deflate
+[97360,25][14] (brukt i zip)[11188,75][1]b[62195,23][9]eksempel [43063,37][3]lzw[42532,77][1]S[1942,162][1]W[1943,135][1]W[22090,51][1]l[1994,13][1]
+[97820,35][1]b[1274,9][1]d[1264,9][1],[4510,38][8]skriver [43648,37][7]ordnumr[23357,40][1]e[54975,45][3]Noe[43424,39][1]o[97809,16][1]Q[43426,23][28]forekommer oftere enn andre
+[15062,46][49]finner antall (frekvenser) for ulike ordnumre,
+ 
+[22592,50][35]kriver Huffmankoder i stedet for or[382,8][1]e[98350,33][10]ord som fo[258,13][22],
+ får kortere koder
+[34149,202][12]BZip2 blokk-[5302,12][1]
+[98827,120][1]K[8854,12][20]er enn LZ-algoritmen[98812,29][12]Enumerate
+ru[13699,30][1]b[55,22][22]Burrows-Wheeler transf[9680,9][10](hoveddel)[134,38][17]Move-To-Front tra[77,13][3]MFT[72,39][1]r[13905,16][1] [15883,33][1]E[267,9][1]H[3041,204][8]Burrows [417,22][7]en (BWT[98706,16][1]e[56027,106][34]oveddelen av BZ2 (blokksorteringen[45153,37][16]Dette steget kom[9351,15][47]elv,
+ men transformerer en blokk (typisk 900kB)[45267,37][1]r[73,12][45]repeterte sekvenser (som ord) til repeterte t[3183,39][28]Repeterte 
+\emph on
+tegn
+\em[64635,11][13] er lettere �[8950,13][7]videre![206,45][29]asjonen er reversibel (for de[6568,12][1])[9651,199][4],
+ B[1221,15][1]T[1221,13][1]
+[16589,121][14]WT på ordet 
+[46016,36][11]referererΩ[46013,37][11].
+ Tegnet 
+[46111,36][1]�[86,38][14] markerer slut[46027,39][1]\[98680,50][14]11" columns="2[76161,132][1]r[64791,127][1]s[99774,11][11]Rotasjoner
+[98275,92][1]u[92552,74][7]Sortert[97082,149][20]
+\family typewriter
+[878,9][1]
+[29,8][13]default
+Ω
+\e[98647,72][1]u[184,80][1]e[183,28][1]f[231,18][1]
+[97483,148][1]�[172,22][1]e[403,9][1]e[384,154][8]rerer
+\f[382,37][1]e[17886,26][1]<[785,144][1]
+[212,41][6]erere
+[421,159][1]
+[207,43][1]
+[1206,168][1]e[215,45][1]e[842,159][1]
+[204,79][1]/[1627,136][1]r[844,45][1]
+[1647,155][1]f[1264,47][1]
+[842,170][1]e[1059,79][1]c[2252,183][1]/[822,137][1]e[1461,44][1]
+[401,157][1]r[1665,45][1]
+[822,172][1]e[2302,77][1]c[1447,203][1]/[3291,134][1]f[1460,81][1]c[2710,203][1]/[2506,135][1]f[3528,80][1]c[3515,166][1]/[51299,68][48]BWT er siste kolonne med tegn fra sortert liste,[103726,16][1]Q[4995,23][10]frreΩeeer[19405,73][47]Nå har vi mange like tegn ved siden av hverand[7201,55][1]l[5701,21][5]med r[6685,44][43]Itemize
+Se også bw brukt på diverse filer[41342,203][11]Reversere B[6931,29][1]e[62535,124][15]ordan gå fra 
+[719,84][6] til 
+[5804,44][1]�[5803,38][1]?[41988,38][4]t at[218,87][1]e[1069,16][1]i[1058,14][1]
+[9852,36][33]ista bestod av ulike 
+\emph on
+ro[5557,11][1]m[6630,12][20]av 
+\emph on
+samme 
+[71300,14][10]ord
+\end_l[106571,43][40]alle kolonner inneholder de samme tegnen[31705,50][11]ista var so[5591,20][1]b[106727,34][31]første kolonne må altså ha d[161,15][6],
+ sor[106,25][1]l[248,16][6]tså 
+[32920,37][7]eeefrrr[6486,40][1]
+[16698,50][40]har nå to kolonner,
+ i ei liste over ro[6099,23][1]b[107060,34][26]kan rotere sidelengs,
+ så[1795,15][32]blir første,
+ og første blir a[8925,40][38]dette er fortsatt en del av løsningen[21416,37][29]orterer vi dette,
+ har vi de [7453,11][10]o første
+[7459,15][8]kolonnen[107273,37][22]så kan vi legge på s[1018,14][1]g[24153,39][1]v[475,11][1]r[873,10][27].
+ Repeter til vi har alle![33963,49][26]iktig rad er den som har 
+[7123,76][1]p[552,9][6]plass
+[107360,190][15]Animasjon,
+ rev[1978,387][1]\[106517,128][25],4,7,10,13,16,19,22,25,28[108518,26][10]Legg til s[2047,19][1]e[102987,140][21],5,8,11,14,17,20,23,2[107699,27][15]Rotere mot høy[73599,42][1]F[99455,115][22],6,9,12,15,18,21,24,27[107920,27][7]ortere
+[33494,46][1]l[44247,15][1]\[107206,93][1]c[25136,38][1]1[109187,40][7]space ~[54194,32][1]i[103676,101][1]c[25357,38][1]2[694,48][1]r[210,160][46]3-4,6-7,9-10,12-13,15-16,18-19,21-22,24-25,27-[1147,28][1]e[445,160][1]1[96620,42][1]s[668,179][1]5[1360,46][1]e[876,160][1]6[662,69][1]f[662,162][1]7[1330,220][1]8[2020,44][1]f[1536,160][1]9[1318,228][1]1[106899,26][1]
+[1987,194][4]11,1[1315,200][1]1[1968,60][1]r[650,163][1]3[650,221][1]4[2628,199][1]1[1291,218][1]6[1291,221][1]7[1285,197][1]8[1273,211][1]9[3910,221][1]0[3895,193][1]2[3864,205][1]2[107991,41][1]s[4533,180][1]3[3849,151][1]o[108401,34][1]4[2505,198][1]2[97341,41][1]s[5142,180][1]6[5121,148][1]o[109007,34][1]7[5073,29][1]�[13362,26][1]
+[5740,135][1],[6434,50][1]r[5989,466][1]f[5989,896][1]r[5989,428][1]r[5989,2772][1]�[4780,162][1]-[5990,253][1]�[5197,122][1]o[5991,670][1]e[5990,212][1]f[11979,1363][1]r[5990,1946][1]�[4735,163][1]1[11980,258][1]�[9938,162][1]8[11981,1279][1]f[11981,412][1]f[5990,399][1]r[5990,2019][1]�[4699,164][1]0[17970,263][1]�[14643,162][1]2[17971,1332][1]f[17971,418][1]f[17971,1412][1]e[17970,679][1]e[23959,234][1]f[23959,430][1]f[23959,230][1]e[23959,428][1]e[23959,226][1]r[23959,427][1]r[23959,221][1]e[23959,424][1]e[23959,215][1]r[23959,421][1]r[23959,209][1]e[23959,418][1]e[23959,203][1]r[23959,415][1]r[23959,192][1]�[18579,164][1]5[23960,248][1]�[18576,157][1]7[27066,191][1],[30394,50][1]e[29949,466][1]�[24641,161][1]3[29950,73][1]r[29950,430][1]r[5991,886][1]f[29950,427][1]f[5991,2726][1]e[29950,412][1]e[5989,399][1]�[30163,27][1] [139359,130][1]8[139516,41][18]ormula $\Longlefta[59467,19][1]D[61431,30][1]e[12219,672][1]r[6228,1317][1]r[12219,1922][1]�[24831,164][1]9[36179,254][1]�[34766,161][1]2[6230,1251][1]f[12219,679][1]e[5990,2202][1]�[29548,164][1]3[42169,260][1]�[39489,162][1]5[18211,1308][1]f[42170,415][1]f[12220,1005][1]e[11980,1363][1]�[38967,163][1]7[48159,265][1]�[44177,161][1]9[24201,1356][1]f[48160,421][1]f[18210,2254][1]e[54148,701][1]�[44295,163][1]4[54149,267][1]�[49507,161][1]6[48161,1375][1]f[54150,424][1]f[54150,2679][1]e[54149,276][1]
+[168780,190][9]Move-to-f[70228,19][1]e[125909,122][1]K[79148,16][21]data,
+ men forbereder[82483,38][92]itialiserer en tabell med alle byte-verdier.
+ t[0]=0,
+ t[1]=1,
+ t[2]=2,
+ \SpecialChar ldots
+[73042,57][11] fra input
+[62970,50][37]inn tegnet i tabellen,
+ skriv index t[82497,46][64]lytt tegnet vi fant til første plass i tabellen (move to front)[126766,48][28]input:
+ caaaaacbbbbbabababab[105134,41][4]inn:[65,61][23] ut:2100001200002111111[168194,16][1]b[105403,21][1]t[95621,20][1]b[105307,25][29]0:
+ aca....cb....abababab   
+[105376,40][26]1:
+ bac....ac....babababa
+[105442,40][24]2:
+ cbb....ba....c......[94164,29][1]L[105508,12][18]3:
+ ddd....dd....d[66,35][16]Itemize
+Alle rep[70638,11][14] blir til null[94604,42][1]S[170142,31][1]l[170575,41][1]l[1362,227][1]i[881,553][1]b[95182,26][37]repeterende sekvenser blir små tall
+[74853,37][33]tt å gå andre veien ved utpakki[171174,74][1]l[1032,119][31]TF gir mer effektiv Huffmankodi[86472,124][1]k[81297,21][1]b[1897,41][7]bbaaaab[1897,58][7]0020001[167794,16][1]b[2915,36][1]b[71457,71][13]4" columns="5[147617,267][26]row>
+<cell multicolumn="1"[71607,130][11]Frekv.
+ fø[169713,40][1]m[196,12][1]2[196,38][1]u[136576,169][1]r[92294,116][1]m[535,152][6]etter
+[536,185][1]/[169204,114][1]a[72075,136][1]9[95024,169][1]
+[72381,135][1]0[72518,136][1]1[154787,35][1]/[169935,114][1]b[731,442][1]1[73249,136][1]3[170665,149][1]c[73536,136][1]2[1461,305][1]2[730,178][1]/[121516,61][19]Før:
+ like mange 
+[100048,37][1]
+[120837,37][1]s[121276,40][1]b[89660,73][19]Etter:
+ overvekt av[121407,38][1]0[102599,40][25]som kan få kortere kode.[140977,192][1]Z[170420,41][1]S[92412,81][1]u[77195,14][28]sorterer så vi får mange r[90777,11][1]
+[176254,49][6]900
+\b[87521,42][19]kB blokkstørrelse
+[133241,47][1]M[7107,13][13]gjør ulike r[90979,12][4]om t[5107,45][20]Deretter fungerer ru[77369,16][11]veldig bra![141259,37][1]u[80414,12][18] av det som blir i[93330,19][1]e[68925,176][4]dapt[89956,134][1]H[5229,12][43] av ei fil,
+ bruker samme koding for hele f[89997,39][56]Ei fil kan bestå av ulike deler (f.eks.
+ norsk+engelsk)[177106,50][1]U[85,11][25]har ulik bokstavfordeling[112985,38][1] [89619,12][27]best med ulike Huffman-træ[101394,49][1]A[504,12][65]imering ser når frekvensene endrer seg,
+ og lager nytt huffmannt[90009,42][1]S[69700,151][11]ritmetisk k[92341,126][1]K[90120,13][12] bedre enn H[81975,22][1]b[1209,28][45] bruker faste koder,
+ aldri mindre enn 1 bit
+[142556,40][58]sjansen for et symbol er 50%,
+ vil begge kode det med 1 bi[100,67][4]90%:[1115,57][12]:
+ fremdeles[245,42][1]A[540,16][7]:
+ 0,1 [308,18][1]e[82598,190][14]presjon og AI
+[178448,120][41]Noen forskere mener datakompresjon og AI [1554,9][8]problem
+[93053,50][25]I:
+ det 
+\emph on
+kortest[143380,17][39]programmet som oppfører seg intelligen[530,28][1]b[90485,23][62]oppdage repeterte mønstre (kan nyttes for kompresjon) krever [124,10][1]s[85344,38][1]r[51,12][13] gir bedre ko[178592,45][13]esimalene i 
+[123904,23][3]pi$[72566,17][61]et vanskelig datasett å komprimere.
+ (mye variasjon) Men:
+\e[179035,47][39]vi kjenner rekkeutviklinger som generer[105945,17][1]F[194,25][1].[3443,38][59] program med endelig lengde,
+ kan generere hele rekka.
+ 
+\b[124233,21][6]infty$[177955,14][11]kompresjon![88319,49][23]i zipfil er vanskelig �[88423,12][21],
+ selv om det fins b[553,15][9] enn zip
+[103994,57][28]pakker ut zipfila,
+ kan vi k[1797,16][6]med bz[173896,16][1]b[854,31][60]at noe er zip-komprimert,
+ og dermed kan behandles slik,
+ kr[865,16][1]�[93014,29][1]e[115312,15][19]body
+\end_document
