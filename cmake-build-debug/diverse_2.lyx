@@ -1,0 +1,12253 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass beamerntnu
+\begin_preamble
+\usepackage{colortbl}
+
+\let\Bbbk\relax
+\usepackage{mtpro2}
+
+\usetheme[slogan=norsk,style=vertical]{NTNU}
+% Added by lyx2lyx
+\setlength{\parskip}{\medskipamount}
+\setlength{\parindent}{0pt}
+\end_preamble
+\options aspectratio=169
+\use_default_options false
+\begin_modules
+logicalmkup
+\end_modules
+\maintain_unincluded_children no
+\language norsk
+\language_package default
+\inputencoding auto-legacy
+\fontencoding auto
+\font_roman "default" "TeX Gyre Termes"
+\font_sans "default" "Open Sans"
+\font_typewriter "default" "TeX Gyre Cursor"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype true
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 0
+\use_package amssymb 0
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Register
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style swiss
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Tekstsøk,
+ Datakompresjon
+\end_layout
+
+\begin_layout Author
+Helge Hafting
+\end_layout
+
+\begin_layout Institute
+Institutt for datateknologi og informatikk
+\end_layout
+
+\begin_layout Section
+Tekstsøk
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Anvendelser for tekstsøk
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Fritekstsøk i dokumenter,
+ nettsider og lignende
+\end_layout
+
+\begin_layout Itemize
+Fritekstsøk i databaser
+\end_layout
+
+\begin_layout Itemize
+Søkemotorer
+\end_layout
+
+\begin_layout Itemize
+Søke etter repeterte strenger for datakompresjon
+\end_layout
+
+\begin_layout Itemize
+DNA-matching
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+En enkel naiv algoritme
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+Tekst:
+ rabarbra
+\begin_inset space \hspace*{\fill}
+\end_inset
+
+(lengde n)
+\end_layout
+
+\begin_layout Description
+Søkeord:
+ bra
+\begin_inset space \hspace*{\fill}
+\end_inset
+
+(lengde m)
+\end_layout
+
+\begin_layout Only
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+1-6
+\end_layout
+
+\end_inset
+
+Skyv søkeordet langs teksten,
+ se om det passer
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+tegn som passer,
+ vises med 
+\series bold
+fet skrift
+\end_layout
+
+\begin_layout Itemize
+første feil med 
+\emph on
+kursiv
+\end_layout
+
+\begin_layout Itemize
+dobbeltløkke for 
+\begin_inset Formula $n-m$
+\end_inset
+
+ posisjoner,
+ og 
+\begin_inset Formula $m$
+\end_inset
+
+ tegn i søkeordet.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Only
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+7-7
+\end_layout
+
+\end_inset
+
+Hele greia,
+ 
+\begin_inset Formula $O\left(n\cdot m\right),\Omega\left(n\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Only
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+1-1
+\end_layout
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="9">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="1em">
+<column alignment="center" valignment="top" width="1em">
+<column alignment="center" valignment="top" width="1em">
+<column alignment="center" valignment="top" width="1em">
+<column alignment="center" valignment="top" width="1em">
+<column alignment="center" valignment="top" width="1em">
+<column alignment="center" valignment="top" width="1em">
+<column alignment="center" valignment="top" width="1em">
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Forsøk
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+r
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+b
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+r
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+b
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+r
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+b
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+r
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Only
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+2-2
+\end_layout
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="9">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="1em">
+<column alignment="center" valignment="top" width="1em">
+<column alignment="center" valignment="top" width="1em">
+<column alignment="center" valignment="top" width="1em">
+<column alignment="center" valignment="top" width="1em">
+<column alignment="center" valignment="top" width="1em">
+<column alignment="center" valignment="top" width="1em">
+<column alignment="center" valignment="top" width="1em">
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Forsøk
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+r
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+b
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+r
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+b
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+r
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+b
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+r
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Only
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+3-3
+\end_layout
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="9">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="1em">
+<column alignment="center" valignment="top" width="1em">
+<column alignment="center" valignment="top" width="1em">
+<column alignment="center" valignment="top" width="1em">
+<column alignment="center" valignment="top" width="1em">
+<column alignment="center" valignment="top" width="1em">
+<column alignment="center" valignment="top" width="1em">
+<column alignment="center" valignment="top" width="1em">
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Forsøk
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+r
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+b
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+r
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+b
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+r
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+b
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+r
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Only
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+4-4
+\end_layout
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="9">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="1em">
+<column alignment="center" valignment="top" width="1em">
+<column alignment="center" valignment="top" width="1em">
+<column alignment="center" valignment="top" width="1em">
+<column alignment="center" valignment="top" width="1em">
+<column alignment="center" valignment="top" width="1em">
+<column alignment="center" valignment="top" width="1em">
+<column alignment="center" valignment="top" width="1em">
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Forsøk
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+r
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+b
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+r
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+b
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+r
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+b
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+r
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Only
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+5-5
+\end_layout
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="9">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="1em">
+<column alignment="center" valignment="top" width="1em">
+<column alignment="center" valignment="top" width="1em">
+<column alignment="center" valignment="top" width="1em">
+<column alignment="center" valignment="top" width="1em">
+<column alignment="center" valignment="top" width="1em">
+<column alignment="center" valignment="top" width="1em">
+<column alignment="center" valignment="top" width="1em">
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Forsøk
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+r
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+b
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+r
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+b
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+r
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+b
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+r
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Only
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+6-6
+\end_layout
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="9">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="1em">
+<column alignment="center" valignment="top" width="1em">
+<column alignment="center" valignment="top" width="1em">
+<column alignment="center" valignment="top" width="1em">
+<column alignment="center" valignment="top" width="1em">
+<column alignment="center" valignment="top" width="1em">
+<column alignment="center" valignment="top" width="1em">
+<column alignment="center" valignment="top" width="1em">
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Forsøk
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+r
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+b
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+r
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+b
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+r
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+b
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+r
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+a
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Only
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+7-7
+\end_layout
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="9">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Forsøk
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+r
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+b
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+r
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+b
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+r
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+b
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+r
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+b
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+r
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+b
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+r
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+b
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+r
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+b
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+r
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+b
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+r
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+a
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Boyer-Moore
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Se på 
+\emph on
+siste 
+\emph default
+tegn i søketeksten først
+\end_layout
+
+\begin_layout Itemize
+Hvis det ikke passer,
+ flytt søketeksten 
+\emph on
+så langt vi kan
+\emph default
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="9">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+r
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+b
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+r
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+b
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+r
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+b
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+r
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+b
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+r
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+b
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+r
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+b
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+r
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+a
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Hvis det passer,
+ se på nestsiste osv.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Regelen om upassende tegn
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Hvis tegnet ikke fins i søketeksten,
+ kan vi flytte 
+\begin_inset Formula $m$
+\end_inset
+
+ steg frem:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="15">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+m
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+e
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+t
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+e
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+o
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+r
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+i
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+t
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+t
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+s
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+t
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+e
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+i
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+n
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+s
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+t
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+e
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+i
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+n
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+s
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+t
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+e
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+i
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+n
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+s
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+t
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+e
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+i
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+n
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Hvis tegnet fins til venstre i søkeordet,
+ kan vi flytte ordet så det passer med teksten 
+\end_layout
+
+\begin_layout Itemize
+Vi har vi en tabell for hvor mye vi kan flytte
+\end_layout
+
+\begin_layout Itemize
+I praksis en tabell for hele alfabetet,
+ hvor de fleste tegn gir et flytt på 
+\begin_inset Formula $m$
+\end_inset
+
+.
+ (Regel om 
+\begin_inset Quotes cld
+\end_inset
+
+upassende tegn
+\begin_inset Quotes crd
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+Tabellen lager vi ved å pre-prosessere søketeksten
+\end_layout
+
+\begin_layout Itemize
+Tegn som fins i søketeksten,
+ gir kortere flytt
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+En 
+\begin_inset Quotes cld
+\end_inset
+
+s
+\begin_inset Quotes crd
+\end_inset
+
+ i siste posisjon gir flytt på 
+\begin_inset Formula $m-1$
+\end_inset
+
+,
+ fordi ordet starter på 
+\begin_inset Quotes cld
+\end_inset
+
+s
+\begin_inset Quotes crd
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\Omega\left(n/m\right)$
+\end_inset
+
+ for søket.
+ Mye bedre!
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Upassende tegn,
+ fortsatt
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Hvis tegnet ikke fins i søketeksten,
+ kan vi flytte 
+\begin_inset Formula $m$
+\end_inset
+
+ steg frem,
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+hvis mismatch var på 
+\emph on
+siste 
+\emph default
+tegn i søketeksten
+\end_layout
+
+\begin_layout Itemize
+med mismatch på 
+\emph on
+nestsiste 
+\emph default
+tegn kan vi flytte 
+\begin_inset Formula $m-1$
+\end_inset
+
+ steg
+\end_layout
+
+\begin_layout Itemize
+ved mismatch på nestnestsiste,
+ flytter vi 
+\begin_inset Formula $m-2$
+\end_inset
+
+ steg osv.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="15">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+m
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+e
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+t
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+e
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+o
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+r
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+i
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+t
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+t
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+s
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+t
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+e
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+i
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+n
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+m
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+e
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+n
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+e
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+m
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+e
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+n
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+e
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Vi trenger altså en todimensjonal tabell:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+En indeks er det upassende tegnet
+\end_layout
+
+\begin_layout Itemize
+Den andrue" deksen er posisjonen i søketeksten
+\end_layout
+
+\begin_layout Itemize
+Verdien i cellen er hvor langt vi kan flytte fremover
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Upassende tegn,
+ lage tabellen
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+For hver posisjon p i søketeksten
+\end_layout
+
+\begin_layout LyX-Code
+  line=hvert tegn x i alfabetet
+\end_layout
+
+\begin_layout LyX-Code
+  l   let mot start i søketeksten fra tline="layout
+
+\begin_layout LyX-Code
+  l   hvis vi finner x etter i steg,line="layout
+
+\begin_layout LyX-Code
+  l   sett Tab[p][x] = i
+\end_layout
+
+\begin_layout LyX-Code
+  l   hvis vi ikke finner x,
+ Tab[p][x]=p+1
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Regel om passende endelse
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="9">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+r
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+e
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+n
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+n
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+e
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+n
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+e
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+e
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+n
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+e
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+e
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+n
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+e
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+e
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+n
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+e
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+e
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+n
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+e
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+0,1:
+ Når siste posisjon treffe valignment="topQuotes cld
+\end_inset
+
+n
+\begin_inset Quotes crd
+\end_inset
+
+,
+ kan vi bare flyttnment steg
+\end_layout
+
+\begin_layout Itemize
+2:
+ Fyouti første posisjon
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Regel om 
+\begin_inset Quotes cld
+\end_inset
+
+upassende tegn
+\begin_inset Quotes crd
+\end_inset
+
+ lar op" lare flyttnment hagin_layout Plain end_deeper
+\begin_layout Itemize
+Regel om 
+\begin_inset Quotes cld
+\end_inset
+
+passende endelse
+\begin_inset Quotes crd
+\end_inset
+
+ lar op" flyttnmto hagi hnt="top">
+<column alignment="center" v\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{true" ulayout
+
+\end_inset
+
+
+\begin_inset Quotes cld
+\end_inset
+
+ne
+\begin_inset Quotes crd
+\end_inset
+
+ passet,
+ ox="none">
+\beginQuotes cld
+\end_inset
+
+ene
+\begin_inset Quotes crd
+\end_inset
+
+ overlapper med seg seld_layout
+
+\end_inset
+</cell>
+<cell alVi slår opp både 
+\begin_inset Quotes cld
+\end_inset
+
+upassende tegn
+\begin_inset Quotes crd
+\end_inset
+
+ og passende endelse
+\begin_inset Quotes crd
+\end_inset
+
+,
+ og bruk="topgelen som gir ftlinengste hoppe
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Passende endelse,
+ tabell
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Tabellen r" valignment="topQuotes cld
+\end_inset
+
+passende endelse
+\begin_inset Quotes crd
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemize
+verdien i cellen er hvor langt vi kan flytten_layout Plain end_deeper
+\begin_layout Itemize
+Lbegi ved å prøve ut om søketeksten overlapper med seg seld_lbegin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ofte gjør ftn ikke det,
+ og vi får lange hopp!
+\end_layout
+
+\end_deeper
+\inset
+</cell>
+<cell alignment="center" valignment="top" bo_deepe"true" leftline="true" usebox="none">
+\Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Galillts�topgel
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Hvis vi søker etter alignment="topQuotes cld
+\end_inset
+
+aa="top" bottomliQuotes crd
+\end_inset
+
+ i alignment="topQuotes cld
+\end_inset
+
+aa=aaa…
+\begin_inset Quotes crd
+\end_inset
+
+,
+ har vi dessvsjonent="top" bottomline="true" leftline="true" us$
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+rue" leftlipasser overalt,
+ de samme a-ene sjekk
+
+\blere ganger
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Galillfant en måte å unngå unød
+\bein_laammenligninger:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Når vi flytter søkeleftlikortere enayouayoulen a"true" leftlivi allerede har sjekk
+t,
+ trenger vi ikke sjekk
+ ftlioverlappende området omigjen.
+\end_layout
+
+\begin_layout Itemize
+Korte flytt skjgnmentdi søkeordetyoulvis matcher seg seld.
+ Hvis det ikke hadde passet,
+ hadde vi flyttelinenger\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignmeTabular
+<lyxtabular version="3" rows="3" columns="12">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+box="en
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+O
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+l
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+l
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" ue" uline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" ue" uline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mismatch O/a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+l
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+l
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+l
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" ue" uline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" ue" uline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nytt forsøk
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cell_layo{orangetrue" ulayout
+
+\end_inset
+
+
+\series bold
+l
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cell_layo{orangetrue" ulayout
+
+\end_inset
+
+
+\series bold
+a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cell_layo{orangetrue" ulayout
+
+\end_inset
+
+
+\series bold
+l
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cell_layo{orangetrue" ulayout
+
+\end_inset
+
+
+\series bold
+a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+l
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" ue" uline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" ue" uline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Programmet trenger ikke sjekk
+ ftn oransjetopgionen omigjen
+\end_layout
+
+\begin_layout Itemize
+Dermegnment="top" bottomline="true" leftlue" us$
+\end_inset
+
+ ox="none">
+\begin_inset Te\Omega\left(n/m\right)$
+\end_inset
+
+ for  Standard
+\begin_inset Tabult
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+LTextr
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Boyer ox=Moorelts�tarbegiel:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout nd_layout
+
+\end_inset
+</celURL
+status collapsed
+
+\begin_layout Plain Layout
+
+"non">
+\begcs.utexas.edu/~moore/publout Fras/fstrpos.pdf
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Wikipedia:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout nd_layout
+
+\end_inset
+</celURL
+status open
+
+\begin_layout Plain Layout
+
+"none">
+en.wikipediainsetwiki/Boyer_moore Tab[etekearch_n_layouhm
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Animasjon (Fyll ut,
+ og velg Boyer-Moore)"top" bottomline="true" leftline="true" usebox="Trenger jav="top" bottomliSeparator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout nd_layout
+
+\end_inset
+</celURL
+status open
+
+\begin_layout Plain Layout
+
+"non">
+\begcs.pitt.edu/~kirk/cs1501/anima Fras/Sab[et.   s
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Demonstrasjon på Moorelts�t>
+<colum:
+\end_layout
+
+\begin_deeper
+\begin_layout nd_layout
+
+\end_inset
+</celURL
+status open
+
+\begin_layout Plain Layout
+
+"non">
+\begcs.utexas.edu/users/moore/best-ideas/Tab[et-kearching/fstrpos-example.   s
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\abult
+</cell>
+<cell alignmm passeMer om="center" valignment="top">
+<column alignmeFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Run-set Te center
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Enkleste en
+
+ment="center" valignment="top">
+<column alignment="centEn serietop">
+true" u erstattes med et antall:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ABIIIIIIIIIIIIBBBCDEFFFGH="none">
+\begin_inset Te\rightarrow$
+\end_inset
+
+ AB12I3BCDE3FGHnment="top">
+<column alignmePause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+I praksis litt mer komplisert
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ftlikan jo væreltsfre i ftlivi ter" imeent="top">
+<column alignment="center" vser vanligvis på 
+\begin_inset Quotes cld
+\end_inset
+
+byt usebegin_inset Quotes crd
+\end_inset
+
+,
+ ikke 
+\begin_inset Quotes cld
+\end_inset
+
+ Stan
+\begin_inset Quotes crd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+må kunne skille mellom="cen og meta"cen
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Eks.,mentuk="tnegativ byt ment=uter" imeeolumekvenser:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ABIIIIIIIIIIIIBBBCDEFFFGH="none">
+\begin_inset Te\rightarrow$
+\end_inset
+
+ [-2]AB[12]I[3]B[-3]CDE[3]F[-2]GHnment="top">
+<column alignmeItemize
+25 byt mbletopdusert til 1end_layout
+
+\endbegin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Kan ikke ter" imeen ABABABABABAB…
+\begin_inset Tabult
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+LTmpel-Ziv ter" valignment="top">
+<cend_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Leser gjennom filn
+\end_layout
+
+\begin_layout Itemize
+I_ins kopieres til begin_
+\end_layout
+
+\begin_layout Itemize
+Hvis en lang nokumekvens termer omigjen:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+dropp dsebox=kriv hell u e�topferanse til begin_
+\end_layout
+
+\begin_layout Itemize
+en
+
+\bnonep">
+<c X tegn,
+ lignvi har sett Y tegn tidligere
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Hjelper hvis mekvensen er nenger enayen sliktopferanse="top">
+<column alignment="center" valignr bakover i et sirkulært buffe ="top">
+<column alignment="center" vOegin_lkan ter" imeens videen med Huffman-kenter"
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Bakover-opferanser
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Må værelin Layout
+nompakt
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ell us kan vi ikke opfereen til korteumn align
+\end_layout
+
+\begin_layout Itemize
+e.eks.
+ 2–3 byt 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Å 
+\begin_inset Quotes cld
+\end_inset
+
+se
+\begin_inset Quotes crd
+\end_inset
+
+ langt bakover i "censtrømmen,
+ gir støjonesjanse ent=å finnetop">
+true" u.
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+men også lenger kjøretid
+\end_layout
+
+\begin_layout Itemize
+påvirgnr en
+
+\btlipåtopferansene våre
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+1 byt mkan peke 255 tegn bakovernment="top">
+<column alignmeItemize
+2 byt mkan peke 65"top" bottomline="truthinne="t{true" uinset
+
+536 tegn bakovernment="top">
+<column alignmeItemize
+3 byt mkan peke 1endop" bottomline="truthinne="t{true" uinset
+
+777ndop" bottomline="truthinne="t{true" uinset
+
+215 tegn bakovernment="top">
+<cend_deeper
+\end_deeper
+\begin_layout Itemize
+I blant kan vi ikke ter" imeen
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Må dt Itr oxså ha en måte å si:
+\end_layout
+
+\begin_layout Itemize
+Her kommer X byt s=uter" imeeolu"cen
+\end_layout
+
+\begin_ment="center" valiktopen
+
+\sjon tar oxså ptop"!
+\end_layout
+
+\end_deeper
+\inset
+</cell>
+<cell alignment="center" valignment="top" boarbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Hvalkan ter" imeens?
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Vurdøket:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-opf + e finn ent=kortere uter" imeeo blokk
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Delivi ter" imeent må altså værelnenger enaysamlet one">
+\for:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+en bakover-opferanse
+\end_layout
+
+\begin_layout Itemize
+e finn ent=en uter" imeeo blokk
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Vi ter" imeent ikke sværlikorteumn align,
+ det hjelper ikke!
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+EksTmpel
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+EksTmpel Stan:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout nd_layoutProblemgn,
+ problemgn.
+ Alltid problemgn!
+\begin_inset Newline newline
+\end_inset
+
+Dtlte er dagens problem.
+ Problemgt n_inset Text
+
+\bNewline newline
+\end_inset
+
+å ker" imeen problematisk  Stan.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+EksTmpel Stan med avsd_laer:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout nd_layoutProblemgn,
+none">
+\begin_inset Te^{10}="true" leftlineroblemgn
+none">
+\begin_inset Te^{20}="true" leftli.
+ Alltid p
+none">
+\begin_inset Te^{30}="true" leftliroblemgn!
+\begin_inset Newline newline
+\end_inset
+
+
+none">
+\begin_inset Te^{40}="true" leftliDtlte er d
+none">
+\begin_inset Te^{50}="true" leftliagens prob
+none">
+\begin_inset Te^{60}="true" leftlilem.
+ Probl
+none">
+\begin_inset Te^{70}="true" leftliemgt n_inset Text
+
+\bNewline newline
+\end_inset
+
+å 
+none">
+\begin_inset Te^{80}="true" leftliter" imeen
+\begin_inset _inset Te^{90}="true" leftlineroblemat
+\begin_inset _inset Te^{100}="true" leftliisk  Stan.
+\begin_inset _inset Te^{110}="true" leftli
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+110 tegn,
+ inkeginrt linjeskift og blanke.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+EksTmpel
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+EksTmpel Stan med avsd_laer:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout nd_layoutProblemgn,
+none">
+\begin_inset Te^{10}="true" leftlineroblemgn
+none">
+\begin_inset Te^{20}="true" leftli.
+ Alltid p
+none">
+\begin_inset Te^{30}="true" leftliroblemgn!
+\begin_inset Newline newline
+\end_inset
+
+
+none">
+\begin_inset Te^{40}="true" leftliDtlte er d
+none">
+\begin_inset Te^{50}="true" leftliagens prob
+none">
+\begin_inset Te^{60}="true" leftlilem.
+ Probl
+none">
+\begin_inset Te^{70}="true" leftliemgt n_inset Text
+
+\bNewline newline
+\end_inset
+
+å 
+none">
+\begin_inset Te^{80}="true" leftliter" imeen
+\begin_inset _inset Te^{90}="true" leftlineroblemat
+\begin_inset _inset Te^{100}="true" leftliisk  Stan.
+\begin_inset _inset Te^{110}="true" leftli
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Ker" imeeo:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout nd_layout[12]Problemgn,
+ p[-11,8][8].
+ Alltid[-18,10][17]!
+\begin_inset Newline newline
+\end_inset
+
+Dtlte er dagens[-27,7][2].
+ [-65,8][17]t n_inset Text
+
+\bNewline newline
+\end_inset
+
+å ker" imeen[-35,8][12]atisk  Stan.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Før ker" imeeing,
+ 110 tegn\end_layout
+
+\end_begin_layout Itemize
+Med 1 byt mper tallkode,
+ 84 tegn\e\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout nd_layoutVi sparte 110-84=26 tegn,
+ ell u 23%
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+="noxså Lz-demo
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Kjøretid
+\end_layout
+
+\abular
+<lyxtabular version="3" rows="5" columns="9">
+<features tabularvalignment="middle">
+<column alignmenor hver tegnposisjon i d_ins,
+ må vi søke etter nengste match i buffe e
+\eenter" valignment="top">
+<column aliout Plainignment="top" bottomlit
+
+\begin_layout Pl,
+ lirkulært buffe  med støjonlse 
+\begin_inset Formula $m$
+\end_inset
+
+\eenter" valignment="top">
+<column alTeste allene="true" usebi vegin_laallent="top" bottomline="true" leftm^{2}begin_inset Text
+
+\begin_layout Plain Layout
+e
+\eItemize
+I praksis går det bedre,
+ lærlig hvis "cen varieret=en del
+\end_layout
+
+\begin_layout Itemize
+Kan ntuk= Boyer-Moore  Standard ent=bedre kjøretid.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+LTextr
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+LTmpel og Ziv ts�tarbegiel:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout nd_layout
+
+\end_inset
+</celURL
+status open
+
+\begin_layout Plain Layout
+
+"non">
+\begcs.duke.edu/courses/speing03/cps296.5/betet
+/ziv_lTmpel_1977e">
+vegial_n_layouhm.pdf
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Wikipedia:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout nd_layout
+
+\end_inset
+</celURL
+status open
+
+\begin_layout Plain Layout
+
+"none">
+en.wikipediainsetwiki/LTmpel
+\backslash
+%E2
+\backslash
+%8</lyackslash
+%93Znd_layout
+
+\end_iend_inset
+
+
+\end_layout
+
+\end_deeper
+\abult
+</cell>
+<cell alignmtandard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Kombineen LZ og Huffmangnment="top">
+<cend_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+LZ leser d_ins,
+ ogx=krivernment="top">
+<column deeper
+\begin_layout Itemize
+bakover-opferanset="top">
+<column alignment="center" vsekvenser med uter" imeeolutegn
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+uter" imeeolutegn tell s opp,
+ ogxter" imeens videen med Huffmannkenter
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+LZW – LTmpel Ziv Welshnment="top">
+<cend_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Lnmenr LZ.
+ Teoretisk samme ter" valig.
+ Lettere å speede opp\eenter" valignment="top">
+<column alLeser ett og ett tegn
+\end_layout
+
+\begin_layout Itemize
+Bygger en ordliste (di passary) celleveis
+\end_layout
+
+\nset
+</cell>
+<cell alignment="centeril å begynnetmed,
+ allen1-byt m«ord»
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Finayet none"an mulig) ordbox=kriv ordnummeret nmed færrean mulig bits!)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+lagre nytt «ord» = ftlte ordety+ nestlutegn
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Ker" valig hvis orde kanlir nengre enaynumrene
+\nter" valignment="top">
+<column alLZW+Huffman="none">
+\begin_inset Te\rightarrow$
+\end_inset
+
+t
+
+\end_inset
+</celNoun
+status open
+
+\begin_layout Plain Layout
+Deflatenment="top">
+<cend_inset
+
+ (ntukt i zip)
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Se eksempel 
+\begin_inset Quotes cld
+\end_inset
+
+lzw
+\begin_inset Quotes crd
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout mtandard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Kombineen LZW og Huffmangnment="top">
+<cend_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+LZW 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+leser d_ins,
+ 
+\nter" valignment="top">
+<column albygger en di passary,
+ 
+\nter" valignment="top">
+<column al=kriver 
+\begin_inset Quotes cld
+\end_inset
+
+ordnumen
+\begin_inset Quotes crd
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Noen 
+\begin_inset Quotes cld
+\end_inset
+
+ord
+\begin_inset Quotes crd
+\end_inset
+
+ foretermer oftere enayandru
+\end_layout
+
+\begin_layout Itemize
+Programmet finner antall (frekvenser)ment=ulike ordnumen,
+ 
+\nter" valignment="tdeeper
+\begin_layout Itemize
+=kriver Huffmankoder i stedetyItr ordnumen
+\end_layout
+
+\begin_layout Itemize
+ord som foretermer ofte,
+ får kortere koder
+\end_layout
+
+\end_deeper
+\abult
+</cell>
+<cell alignmtandard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+BZip2 blokk-ker" imeeingnment="top">
+<cend_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Ker" imeeer mer enayLZ-n_layout ne
+\nter" valignment="top">
+<cEnumeratenrun-set Te center
+\end_layout
+
+\ent="top">
+<cEnumeratenBurrows-Wheel u _inseen
+
+\sjon (hoveddel)
+\end_layout
+
+\begin_layout EnumeratenMove-To-Front trnseen
+
+\sjon (MFT)
+\end_layout
+
+\begin_layout Enumeratenrun-set Te center igjen
+\end_layout
+
+\begin_layout EnumeratenHuffmannkenter
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Burrows Wheel u _inseen
+
+\sjonen (BWT)
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Hoveddelen a"tBZ2 (blokksorteringe
+\end_inset
+</cell>
+<cell aligItemize
+Delteumnegtlikor" imeent ikke selv,
+ men tinseen
+
+eret=en blokk (typisk 900kB)
+\end_layout
+
+\begin_layout Itemize
+Tinseen
+
+eret=op">
+<columekvenser (som ord) til op">
+<colutegn
+\end_layout
+
+\begin_layout Itemize
+Rp">
+<coluin Layout
+tegn
+\emph default
+ er nettere å ker" imeen videen!
+\end_layout
+
+\begin_layout Itemize
+Tinseen
+
+\sjonen et=opversibel (for deker" imeeing)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+EksTmpel,
+ Burrows-Wheel u Tinseen
+
+\sjon
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+BWTipåtordety
+\begin_inset Quotes cld
+\end_inset
+
+opfereenrΩ
+\begin_inset Quotes crd
+\end_inset
+
+.
+ Tegnet 
+\begin_inset Quotes cld
+\end_inset
+
+Ω
+\begin_inset Quotes crd
+\end_inset
+
+ margnrer slutten
+\end_layout
+
+\begin_layout Itemize
+ter" valignmeTabular
+<lyxtabular version="3" rows="11" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Rot\sjoner
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Sortert
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\t="top"_inset
+</c
+opfereenr
+\t="top"default
+Ω
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\t="top"_inset
+</c
+pfereenr
+\t="top"default
+Ω
+\t="top"_inset
+</c
+o
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ω
+\t="top"_inset
+</c
+opfereenr
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\t="top"_inset
+</c
+preenr
+\t="top"default
+Ω
+\t="top"_inset
+</c
+oef
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\t="top"_inset
+</c
+o
+\t="top"default
+Ω
+\t="top"_inset
+</c
+oefpreen
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\t="top"_inset
+</c
+pree
+\t="top"default
+Ω
+\t="top"_inset
+</c
+oefpr
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\t="top"_inset
+</c
+ee
+\t="top"default
+Ω
+\t="top"_inset
+</c
+oefprnr
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\t="top"_inset
+</c
+pr
+\t="top"default
+Ω
+\t="top"_inset
+</c
+oefprnr
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\t="top"_inset
+</c
+opr
+\t="top"default
+Ω
+\t="top"_inset
+</c
+oefprn
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\t="top"_inset
+</c
+fereenr
+\t="top"default
+Ω
+\t="top"_inset
+</c
+on
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\t="top"_inset
+</c
+eeee
+\t="top"default
+Ω
+\t="top"_inset
+</c
+oefpr
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\t="top"_inset
+</c
+opfereenr
+\t="top"default
+Ω
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\t="top"_inset
+</c
+opree
+\t="top"default
+Ω
+\t="top"_inset
+</c
+oefp
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\t="top"_inset
+</c
+opree
+\t="top"default
+Ω
+\t="top"_inset
+</c
+oefp
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\t="top"_inset
+</c
+eeeenr
+\t="top"default
+Ω
+\t="top"_inset
+</c
+oef
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\t="top"_inset
+</c
+opr
+\t="top"default
+Ω
+\t="top"_inset
+</c
+oefprn
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\t="top"_inset
+</c
+fereenr
+\t="top"default
+Ω
+\t="top"_inset
+</c
+on
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\t="top"_inset
+</c
+o
+\t="top"default
+Ω
+\t="top"_inset
+</c
+oefpreen
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\t="top"_inset
+</c
+efereenr
+\t="top"default
+Ω
+\t="top"_inset
+</c
+o
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ω
+\t="top"_inset
+</c
+opfereenr
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+BWTier siste kolonnetmedutegn fra sortert liste,
+ 
+\begin_inset Quotes cld
+\end_inset
+
+ofrreΩeen_inset Text
+
+\bQuotes crd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Nå har vi mout  like tegn ved olumn a"thverandru,
+ 
+\nter" valignment="tdeeper
+\begin_layout Itemize
+nettere å ker" imeen medurun-set Te center
+\end_layout
+
+\ent="top">
+<cItemize
+Se oxså bw ntuklipåtd
+vegie filer
+\end_layout
+
+\end_deeper
+\abult
+</cell>
+<cell alignmtandard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Rpverseen Burrows-Wheel u _inseen
+
+\sjonen
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Hvordan gå fra 
+\begin_inset Quotes cld
+\end_inset
+
+ofrreΩeen_inset Text
+
+\bQuotes crd
+\end_inset
+
+ til 
+\begin_inset Quotes cld
+\end_inset
+
+opfereenΩ
+\begin_inset Quotes crd
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Itemize
+Vet aty
+\begin_inset Quotes cld
+\end_inset
+
+ofrreΩeen_inset Text
+
+\bQuotes crd
+\end_inset
+
+ er siste kolonneti sortert liste
+\nter" valignment="top">
+<column alLista bestod av=ulike _iend_insetot\sjoner
+\emph default
+ av 
+\emph on
+samme 
+\emph default
+ord
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+allenkolonner d_neholder de samme tegnene
+\nter" valignmend_deeper
+\begin_layout Itemize
+Lista var sortert
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+første kolonnetmå altså ha de samme tegnene,
+ lirtert
+\end_layout
+
+\begin_layout Itemize
+altså "none">
+\beginQuotes cld
+\end_inset
+
+eeeefrrrrΩ
+\begin_inset Quotes crd
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Vi har nåmto kolonnersebi ei listeiover tot\sjoner
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+kan rotere olumone"a,
+ lå siste kolonnetnlir første,
+ ogxførste nlir andru
+\end_layout
+
+\begin_layout Itemize
+ftlte nn enttsattluayoul a"tløsningen
+\end_layout
+
+\begin_layout Itemize
+lirterer vi ftlte,
+ har vi deuin Layout
+toxførste
+\emph default
+ kolonnene
+\nter" valignment="top">
+<column allå kan vi legge på siste kolonnetigjen
+\end_layout
+
+\begin_layout Itemize
+vi har nåmtre kolonner.
+ Rp">
+<c til vi har alle!
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Riktig rad er den lignhar 
+\begin_inset Quotes cld
+\end_inset
+
+Ω
+\begin_inset Quotes crd
+\end_inset
+
+ på siste ptop"
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Animasjon,onepverseen Burrows-Wheel u _inseen
+
+\sjonen
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Hvordan gå fra 
+\begin_inset Quotes cld
+\end_inset
+
+ofrreΩeen_inset Text
+
+\bQuotes crd
+\end_inset
+
+ til 
+\begin_inset Quotes cld
+\end_inset
+
+opfereenΩ
+\begin_inset Quotes crd
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Itemize
+
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text,4,7,10,13,16,19,22,25,28
+\end_layout
+
+\end_inset
+
+Legg til siste
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+e
+\end_layout
+,5,8,11,14,17,20,23,2end_layout
+
+\end_deeper
+\enRotere mot høylar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemize
+verdien i cellen er hvor langt v,6,9,12,15,18,21,24,2 blokk
+\end_layout
+
+\end_deSorterar version="3" rows="11" coluend_layout
+
+\begin_layout LyX-Code
+umns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+\begin_layout Plain Layout
+
+\end_layout
+ne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+
+,5,8,11,14,17,20,23,2end_layout
+
+\end_deeper
+\enr
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+3-4,6-7,9-10,12-13,15-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+ar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+ayout
+
+\end_inset
+</cell>
+<cell alignment=ne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+5,8,11,14,17,20,23,2end_layout
+
+\end_deeper
+\enar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+6-7,9-10,12-13,15-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+f
+\end_layout
+
+\end_inset
+
+
+\mns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+a blokk
+\end_layout
+
+\end_deeper
+\begin_lane="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+8,11,14,17,20,23,2end_layout
+
+\end_deeper
+\enf
+\end_layout
+
+\end_inset
+
+
+\mns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+9-10,12-13,15-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+ar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+a10
+\end_layout
+
+\end_inset
+eeper
+\begin_lane="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+11,14,17,20,23,2end_layout
+
+\end_deeper
+\enar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+12-13,15-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+r
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+1-1 kan flytten_layout Plain end_deeper
+\begne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+14,17,20,23,2end_layout
+
+\end_deeper
+\enr
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+15-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+ar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+a1end_layout
+
+\end_deeper
+\end_deeper
+\begine="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+17,20,23,2end_layout
+
+\end_deeper
+\enar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+r
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+1-19\begin_layout Plain Layout
+
+\end_layout
+ne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+
+0,23,2end_layout
+
+\end_deeper
+\enr
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+ar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+a2\end_inset
+</cell>
+<cell alignment="centene="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+
+3,2end_layout
+
+\end_deeper
+\enar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout ItemiLayout
+
+\series bold
+e
+\end_layout
+4-25,27-28
+\end_layout
+
+\end_inset
+
+r
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+1-2leftline="true" usebox="none">
+\begin_insne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+
+end_layout
+
+\end_deeper
+\enr
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-Layout
+
+\series bold
+e
+\end_layout
+7-28
+\end_layout
+
+\end_inset
+
+Ω
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+1,4,7,10,13,16,19,22,25,28
+\end_layout
+
+\end_inset
+
+r
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+umns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+\begin_layout Plain Layout
+
+\end_layout
+ne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+
+,5,8,11,14,17,20,23,2end_layout
+
+\end_deeper
+\enf
+\end_layout
+
+\end_inset
+
+
+\mns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+3-4,6-7,9-10,12-13,15-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+ar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+ayout
+
+\end_inset
+</cell>
+<cell alignment=ne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+5,8,11,14,17,20,23,2end_layout
+
+\end_deeper
+\enar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+6-7,9-10,12-13,15-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+r
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+1- blokk
+\end_layout
+
+\end_deeper
+\begin_lane="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+8,11,14,17,20,23,2end_layout
+
+\end_deeper
+\enr
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+9-10,12-13,15-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+ar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+a10
+\end_layout
+
+\end_inset
+eeper
+\begin_lane="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+11,14,17,20,23,2end_layout
+
+\end_deeper
+\enar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+12-13,15-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+r
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+1-1 kan flytten_layout Plain end_deeper
+\begne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+14,17,20,23,2end_layout
+
+\end_deeper
+\enr
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+15-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+ar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+a1end_layout
+
+\end_deeper
+\end_deeper
+\begine="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+17,20,23,2end_layout
+
+\end_deeper
+\enar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+r
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+1-19\begin_layout Plain Layout
+
+\end_layout
+ne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+
+0,23,2end_layout
+
+\end_deeper
+\enr
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+Ω
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+1a2\end_inset
+</cell>
+<cell alignment="centene="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+
+3,2end_layout
+
+\end_deeper
+\enΩ
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-Layout
+
+\series bold
+e
+\end_layout
+4-25,27-28
+\end_layout
+
+\end_inset
+
+r
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+1-2leftline="true" usebox="none">
+\begin_insne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+
+end_layout
+
+\end_deeper
+\enr
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-Layout
+
+\series bold
+e
+\end_layout
+7-28
+\end_layout
+
+\end_inset
+
+ar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+1,4,7,10,13,16,19,22,25,28
+\end_layout
+
+\end_inset
+
+f
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+umns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+\begin_layout Plain Layout
+
+\end_layout
+ne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+
+,5,8,11,14,17,20,23,2end_layout
+
+\end_deeper
+\enr
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+3-4,6-7,9-10,12-13,15-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+ar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+ayout
+
+\end_inset
+</cell>
+<cell alignment=ne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+5,8,11,14,17,20,23,2end_layout
+
+\end_deeper
+\enar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+6-7,9-10,12-13,15-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+r
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+1- blokk
+\end_layout
+
+\end_deeper
+\begin_lane="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+8,11,14,17,20,23,2end_layout
+
+\end_deeper
+\enr
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+9-10,12-13,15-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+ar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+a10
+\end_layout
+
+\end_inset
+eeper
+\begin_lane="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+11,14,17,20,23,2end_layout
+
+\end_deeper
+\enar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+12-13,15-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+r
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+1-1 kan flytten_layout Plain end_deeper
+\begne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+14,17,20,23,2end_layout
+
+\end_deeper
+\enr
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+15-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+Ω
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+1a1end_layout
+
+\end_deeper
+\end_deeper
+\begine="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+17,20,23,2end_layout
+
+\end_deeper
+\enΩ
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+r
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+1-19\begin_layout Plain Layout
+
+\end_layout
+ne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+
+0,23,2end_layout
+
+\end_deeper
+\enr
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+ar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+a2\end_inset
+</cell>
+<cell alignment="centene="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+
+3,2end_layout
+
+\end_deeper
+\enar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout ItemiLayout
+
+\series bold
+e
+\end_layout
+4-25,27-28
+\end_layout
+
+\end_inset
+
+f
+\end_layout
+
+\end_inset
+
+
+\mns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+a2leftline="true" usebox="none">
+\begin_insne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+
+end_layout
+
+\end_deeper
+\enf
+\end_layout
+
+\end_inset
+
+
+\mns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout ItemiLayout
+
+\series bold
+e
+\end_layout
+7-28
+\end_layout
+
+\end_inset
+
+ar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+1,4,7,10,13,16,19,22,25,28
+\end_layout
+
+\end_inset
+
+r
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+umns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+\begin_layout Plain Layout
+
+\end_layout
+ne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+
+,5,8,11,14,17,20,23,2end_layout
+
+\end_deeper
+\enr
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+3-4,6-7,9-10,12-13,15-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+ar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+ayout
+
+\end_inset
+</cell>
+<cell alignment=ne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+5,8,11,14,17,20,23,2end_layout
+
+\end_deeper
+\enar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+6-7,9-10,12-13,15-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+r
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+1- blokk
+\end_layout
+
+\end_deeper
+\begin_lane="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+8,11,14,17,20,23,2end_layout
+
+\end_deeper
+\enr
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+9-10,12-13,15-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+Ω
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+1a10
+\end_layout
+
+\end_inset
+eeper
+\begin_lane="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+11,14,17,20,23,2end_layout
+
+\end_deeper
+\enΩ
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+12-13,15-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+r
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+1-1 kan flytten_layout Plain end_deeper
+\begne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+14,17,20,23,2end_layout
+
+\end_deeper
+\enr
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+15-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+ar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+a1end_layout
+
+\end_deeper
+\end_deeper
+\begine="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+17,20,23,2end_layout
+
+\end_deeper
+\enar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+f
+\end_layout
+
+\end_inset
+
+
+\mns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+a19\begin_layout Plain Layout
+
+\end_layout
+ne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+
+0,23,2end_layout
+
+\end_deeper
+\enf
+\end_layout
+
+\end_inset
+
+
+\mns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+ar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+a2\end_inset
+</cell>
+<cell alignment="centene="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+
+3,2end_layout
+
+\end_deeper
+\enar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout ItemiLayout
+
+\series bold
+e
+\end_layout
+4-25,27-28
+\end_layout
+
+\end_inset
+
+r
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+1-2leftline="true" usebox="none">
+\begin_insne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+
+end_layout
+
+\end_deeper
+\enr
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-Layout
+
+\series bold
+e
+\end_layout
+7-28
+\end_layout
+
+\end_inset
+
+ar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+1,4,7,10,13,16,19,22,25,28
+\end_layout
+
+\end_inset
+
+r
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+umns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+\begin_layout Plain Layout
+
+\end_layout
+ne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+
+,5,8,11,14,17,20,23,2end_layout
+
+\end_deeper
+\enar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+3-4,6-7,9-10,12-13,15-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+f
+\end_layout
+
+\end_inset
+
+
+\mns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+ayout
+
+\end_inset
+</cell>
+<cell alignment=ne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+5,8,11,14,17,20,23,2end_layout
+
+\end_deeper
+\enf
+\end_layout
+
+\end_inset
+
+
+\mns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+6-7,9-10,12-13,15-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+ar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+a blokk
+\end_layout
+
+\end_deeper
+\begin_lane="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+8,11,14,17,20,23,2end_layout
+
+\end_deeper
+\enar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+9-10,12-13,15-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+r
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+1-10
+\end_layout
+
+\end_inset
+eeper
+\begin_lane="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+11,14,17,20,23,2end_layout
+
+\end_deeper
+\enr
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+12-13,15-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+ar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+a1 kan flytten_layout Plain end_deeper
+\begne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+14,17,20,23,2end_layout
+
+\end_deeper
+\enar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+5-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+r
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+1-1end_layout
+
+\end_deeper
+\end_deeper
+\begine="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+17,20,23,2end_layout
+
+\end_deeper
+\enr
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+ar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+a19\begin_layout Plain Layout
+
+\end_layout
+ne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+
+0,23,2end_layout
+
+\end_deeper
+\enar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+r
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+1-2\end_inset
+</cell>
+<cell alignment="centene="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+
+3,2end_layout
+
+\end_deeper
+\enr
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-Layout
+
+\series bold
+e
+\end_layout
+4-25,27-28
+\end_layout
+
+\end_inset
+
+Ω
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+1a2leftline="true" usebox="none">
+\begin_insne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+
+end_layout
+
+\end_deeper
+\enΩ
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-Layout
+
+\series bold
+e
+\end_layout
+7-28
+\end_layout
+
+\end_inset
+
+r
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+1,4,7,10,13,16,19,22,25,28
+\end_layout
+
+\end_inset
+
+ar version="3" rows="11" coluend_layout
+
+\begin_layout LyX-Code
+umns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+\begin_layout Plain Layout
+
+\end_layout
+ne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+
+,5,8,11,14,17,20,23,2end_layout
+
+\end_deeper
+\enΩ
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+3-4,6-7,9-10,12-13,15-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+r
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+1-yout
+
+\end_inset
+</cell>
+<cell alignment=ne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+5,8,11,14,17,20,23,2end_layout
+
+\end_deeper
+\enr
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+6-7,9-10,12-13,15-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+ar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+a blokk
+\end_layout
+
+\end_deeper
+\begin_lane="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+8,11,14,17,20,23,2end_layout
+
+\end_deeper
+\enar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+9-10,12-13,15-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+f
+\end_layout
+
+\end_inset
+
+
+\mns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+a10
+\end_layout
+
+\end_inset
+eeper
+\begin_lane="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+11,14,17,20,23,2end_layout
+
+\end_deeper
+\enf
+\end_layout
+
+\end_inset
+
+
+\mns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+2-13,15-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+ar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+a1 kan flytten_layout Plain end_deeper
+\begne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+14,17,20,23,2end_layout
+
+\end_deeper
+\enar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+5-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+r
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+1-1end_layout
+
+\end_deeper
+\end_deeper
+\begine="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+17,20,23,2end_layout
+
+\end_deeper
+\enr
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+ar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+a19\begin_layout Plain Layout
+
+\end_layout
+ne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+
+0,23,2end_layout
+
+\end_deeper
+\enar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+r
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+1-2\end_inset
+</cell>
+<cell alignment="centene="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+
+3,2end_layout
+
+\end_deeper
+\enr
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-Layout
+
+\series bold
+e
+\end_layout
+4-25,27-28
+\end_layout
+
+\end_inset
+
+ar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+a2leftline="true" usebox="none">
+\begin_insne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+
+end_layout
+
+\end_deeper
+\enar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout ItemiLayout
+
+\series bold
+e
+\end_layout
+7-28
+\end_layout
+
+\end_inset
+
+r
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+1,4,7,10,13,16,19,22,25,28
+\end_layout
+
+\end_inset
+
+Ω
+\end_layout
+
+\end_inset
+
+="none">
+\begin_out Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout ItemiLayout
+
+\series bold
+e
+\end_layout
+8
+\end_layout
+
+\end_inset
+
+"none">
+\begin_inset Te\Long" learrow$
+\end_inset
+
+ Dtr
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+umns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+\begin_layout Plain Layout
+
+\end_layout
+ne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+
+,5,8,11,14,17,20,23,2end_layout
+
+\end_deeper
+\enar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+3-4,6-7,9-10,12-13,15-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+r
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+1-yout
+
+\end_inset
+</cell>
+<cell alignment=ne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+5,8,11,14,17,20,23,2end_layout
+
+\end_deeper
+\enr
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+6-7,9-10,12-13,15-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+ar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+a blokk
+\end_layout
+
+\end_deeper
+\begin_lane="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+8,11,14,17,20,23,2end_layout
+
+\end_deeper
+\enar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+9-10,12-13,15-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+r
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+1-10
+\end_layout
+
+\end_inset
+eeper
+\begin_lane="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+11,14,17,20,23,2end_layout
+
+\end_deeper
+\enr
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+12-13,15-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+ar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+a1 kan flytten_layout Plain end_deeper
+\begne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+14,17,20,23,2end_layout
+
+\end_deeper
+\enar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+5-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+r
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+1-1end_layout
+
+\end_deeper
+\end_deeper
+\begine="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+17,20,23,2end_layout
+
+\end_deeper
+\enr
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+Ω
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+1a19\begin_layout Plain Layout
+
+\end_layout
+ne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+
+0,23,2end_layout
+
+\end_deeper
+\enΩ
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+r
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+1-2\end_inset
+</cell>
+<cell alignment="centene="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+
+3,2end_layout
+
+\end_deeper
+\enr
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-Layout
+
+\series bold
+e
+\end_layout
+4-25,27-28
+\end_layout
+
+\end_inset
+
+ar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+a2leftline="true" usebox="none">
+\begin_insne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+
+end_layout
+
+\end_deeper
+\enar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout ItemiLayout
+
+\series bold
+e
+\end_layout
+7-28
+\end_layout
+
+\end_inset
+
+f
+\end_layout
+
+\end_inset
+
+
+\mns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+,4,7,10,13,16,19,22,25,28
+\end_layout
+
+\end_inset
+
+ar version="3" rows="11" coluend_layout
+
+\begin_layout LyX-Code
+umns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+\begin_layout Plain Layout
+
+\end_layout
+ne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+
+,5,8,11,14,17,20,23,2end_layout
+
+\end_deeper
+\enar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+3-4,6-7,9-10,12-13,15-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+r
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+1-yout
+
+\end_inset
+</cell>
+<cell alignment=ne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+5,8,11,14,17,20,23,2end_layout
+
+\end_deeper
+\enr
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+6-7,9-10,12-13,15-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+ar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+a blokk
+\end_layout
+
+\end_deeper
+\begin_lane="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+8,11,14,17,20,23,2end_layout
+
+\end_deeper
+\enar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+9-10,12-13,15-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+r
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+1-10
+\end_layout
+
+\end_inset
+eeper
+\begin_lane="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+11,14,17,20,23,2end_layout
+
+\end_deeper
+\enr
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+12-13,15-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+Ω
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+1a1 kan flytten_layout Plain end_deeper
+\begne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+14,17,20,23,2end_layout
+
+\end_deeper
+\enΩ
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+15-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+r
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+1-1end_layout
+
+\end_deeper
+\end_deeper
+\begine="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+17,20,23,2end_layout
+
+\end_deeper
+\enr
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+ar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+a19\begin_layout Plain Layout
+
+\end_layout
+ne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+
+0,23,2end_layout
+
+\end_deeper
+\enar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+f
+\end_layout
+
+\end_inset
+
+
+\mns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+a2\end_inset
+</cell>
+<cell alignment="centene="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+
+3,2end_layout
+
+\end_deeper
+\enf
+\end_layout
+
+\end_inset
+
+
+\mns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout ItemiLayout
+
+\series bold
+e
+\end_layout
+4-25,27-28
+\end_layout
+
+\end_inset
+
+ar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+a2leftline="true" usebox="none">
+\begin_insne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+
+end_layout
+
+\end_deeper
+\enar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout ItemiLayout
+
+\series bold
+e
+\end_layout
+7-28
+\end_layout
+
+\end_inset
+
+r
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+1,4,7,10,13,16,19,22,25,28
+\end_layout
+
+\end_inset
+
+ar version="3" rows="11" coluend_layout
+
+\begin_layout LyX-Code
+umns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+\begin_layout Plain Layout
+
+\end_layout
+ne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+
+,5,8,11,14,17,20,23,2end_layout
+
+\end_deeper
+\enar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+3-4,6-7,9-10,12-13,15-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+r
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+1-yout
+
+\end_inset
+</cell>
+<cell alignment=ne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+5,8,11,14,17,20,23,2end_layout
+
+\end_deeper
+\enr
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+6-7,9-10,12-13,15-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+Ω
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+1a blokk
+\end_layout
+
+\end_deeper
+\begin_lane="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+8,11,14,17,20,23,2end_layout
+
+\end_deeper
+\enΩ
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+9-10,12-13,15-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+r
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+1-10
+\end_layout
+
+\end_inset
+eeper
+\begin_lane="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+11,14,17,20,23,2end_layout
+
+\end_deeper
+\enr
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+12-13,15-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+ar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+a1 kan flytten_layout Plain end_deeper
+\begne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+14,17,20,23,2end_layout
+
+\end_deeper
+\enar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+5-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+f
+\end_layout
+
+\end_inset
+
+
+\mns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+a1end_layout
+
+\end_deeper
+\end_deeper
+\begine="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+17,20,23,2end_layout
+
+\end_deeper
+\enf
+\end_layout
+
+\end_inset
+
+
+\mns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+8-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+ar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+a19\begin_layout Plain Layout
+
+\end_layout
+ne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+
+0,23,2end_layout
+
+\end_deeper
+\enar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+r
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+1-2\end_inset
+</cell>
+<cell alignment="centene="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+
+3,2end_layout
+
+\end_deeper
+\enr
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-Layout
+
+\series bold
+e
+\end_layout
+4-25,27-28
+\end_layout
+
+\end_inset
+
+ar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+a2leftline="true" usebox="none">
+\begin_insne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+
+end_layout
+
+\end_deeper
+\enar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout ItemiLayout
+
+\series bold
+e
+\end_layout
+7-28
+\end_layout
+
+\end_inset
+
+r
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+1,4,7,10,13,16,19,22,25,28
+\end_layout
+
+\end_inset
+
+ar version="3" rows="11" coluend_layout
+
+\begin_layout LyX-Code
+umns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+\begin_layout Plain Layout
+
+\end_layout
+ne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+
+,5,8,11,14,17,20,23,2end_layout
+
+\end_deeper
+\enr
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+3-4,6-7,9-10,12-13,15-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+Ω
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+1ayout
+
+\end_inset
+</cell>
+<cell alignment=ne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+5,8,11,14,17,20,23,2end_layout
+
+\end_deeper
+\enΩ
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+6-7,9-10,12-13,15-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+r
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+1- blokk
+\end_layout
+
+\end_deeper
+\begin_lane="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+8,11,14,17,20,23,2end_layout
+
+\end_deeper
+\enr
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+9-10,12-13,15-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+ar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+a10
+\end_layout
+
+\end_inset
+eeper
+\begin_lane="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+11,14,17,20,23,2end_layout
+
+\end_deeper
+\enar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+12-13,15-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+f
+\end_layout
+
+\end_inset
+
+
+\mns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+a1 kan flytten_layout Plain end_deeper
+\begne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+14,17,20,23,2end_layout
+
+\end_deeper
+\enf
+\end_layout
+
+\end_inset
+
+
+\mns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+5-16,18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+ar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+a1end_layout
+
+\end_deeper
+\end_deeper
+\begine="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+17,20,23,2end_layout
+
+\end_deeper
+\enar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+18-19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+r
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+1-19\begin_layout Plain Layout
+
+\end_layout
+ne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+
+0,23,2end_layout
+
+\end_deeper
+\enr
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+ar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+a2\end_inset
+</cell>
+<cell alignment="centene="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+
+3,2end_layout
+
+\end_deeper
+\enar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout ItemiLayout
+
+\series bold
+e
+\end_layout
+4-25,27-28
+\end_layout
+
+\end_inset
+
+r
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+1-2leftline="true" usebox="none">
+\begin_insne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+
+end_layout
+
+\end_deeper
+\enr
+\end_layout
+
+\end_inset
+
+
+\begin_inset "ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-Layout
+
+\series bold
+e
+\end_layout
+7-28
+\end_layout
+
+\end_inset
+
+ar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+1,4,7,10,13,16,19,22,25,28
+\end_layout
+
+\end_inset
+
+r
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+_deepto-fbegin_lane="tr~eepeen
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ayout
+
+\end_e
+endeatabegin_lforb
+\begout
+
+\begin_layout Itemicollapsed
+
+\bInitia
+
+\be Layouout Iteut
+
+\llenment-\beginr.
+ t[0]=0emic[1]=1emic[2]=2,
+ \SpecialChar ldots
+
+\end_layout
+
+\begin_layout Itemize
+Itemize
+Ev
+\enbakover fra llaps
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+fut Pe ter hvout
+
+15-1ine="true Plainin Layout
+
+8,11,14,17,20,23,2end_layout
+
+\end_din_lae ter hbegi~eepin Lversion="top"hvout
+
+15-1 (sed
+mto fbegiout Itemize
+ende ter hvor mout  tegn lignn_layout Ppur
+\eco blocbbbbbabababab
+17,20,23,2end_layout
+
+\end_deeper
+\enar inn:co blocbbbbbabababab
+17,20,23,2end_layout
+
+\end_deeper
+\enar  ut:2100001200002111111
+\begin_layout Playout
+
+\end_deeper
+\eneuter" imeeo blokk?
+layout
+
+\end_deeper
+\enar 0:
+ aca....cb....abababab  out
+
+\end_deeper
+\enr
+\end_ladeeper
+\enar in_ibac....ac....babababaut
+
+\end_deeper
+\enr
+\end_ladeeper
+\enar _inscbb....ba....c......eo blokk?
+\end_layout
+
+\begindeeper
+\enar 3:
+ ddd...edd...ed......eo blokk?
+\end_layout
+
+\beginlayout Itllenl a"ten støjo nlir in LnuItem
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+_deepto-fbegin_lane="tr~eepeen
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ Ppur
+\eco blocbbbbbabababab
+17,20,23,2end_layout
+
+\end_deeper
+\enar inn:co blocbbbbbabababab
+17,20,23,2end_layout
+
+\end_deeper
+\enar  ut:2100001200002111111
+\begin_layout Playout
+
+\end_deeper
+\eneuter" imeeo blokk?
+layout
+
+\end_deeper
+\enar 0:
+ aca....cb....abababab  out
+
+\end_deeper
+\enr
+\end_ladeeper
+\enar in_ibac....ac....babababaut
+
+\end_deeper
+\enr
+\end_ladeeper
+\enar _inscbb....ba....c......eo blokk?
+\end_layout
+
+\begindeeper
+\enar 3:
+ ddd...edd...ed......eo blokk?
+\end_layout
+
+\beginlayout Itllenl a"ten støjo nlir in LnuItem
+\end_layout
+
+\deeper
+\begne="tr~eeper
+\bel a"tenut
+
+
+e
+Skal ftlnlir små 
+\be
+\end_layout
+
+\begin_layout Itemize
+Ittt.babgå layoutvein_l acautpakkEv
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+8,11,14,17,20,23,2end_latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+_TFayoutinsetffek\endcell>
+<celut ItemiLayout
+
+\series bold
+e
+\end_layout
+7-28
+\end_layout
+
+\end_inset
+
+f
+\end_layout
+
+\end_inset
+
+
+\mns="2">
+<feyout Itemizbegin_layout Itemicolllayout
+
+\end_deeper
+\enar inn:co blocbbbbbbb blobb
+17,20,23,2end_layout
+
+\end_deeper
+\enar  ut:21000012000000200010
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\20,23,2end_layout
+
+\end_deeper
+\enf
+\end_layout
+
+\end_inset
+
+
+\mns="2">
+ize
+Ev
+\enbaize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+ayout
+
+\end_inset
+</cell>
+<cell alignment=ne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_lalayout
+
+\bemultijoneut="1"out
+
+
+a1end_layout
+
+\end_deeper
+\end_deeper
+\begine="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imF_lay.eute�ut Frame
+\begin_inset Argument 4
+status multijoneut="2"out
+
+
+a1end_layout
+
+\end_deeper
+\end_ollapsed
+
+\begin_layout Plain Layout
+
+
+a2\end_inset
+</cell>
+<cell alignment="centene="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo bloneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+5,8,11,1multijoneut="1"out
+
+
+a1end_layout
+
+\end_deeper
+\end_deeper
+\begine="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imF_lay.eu.ac..t Frame
+\begin_inset Argument 4
+status multijoneut="2"out
+
+
+a1end_layout
+
+\end_deeper
+\end_ollapsed
+
+\begin_layout Plain Layout
+
+
+a2\end_inset
+</cell>
+<cell alignment="centene="tr~eeper
+?
+\end_layout
+
+\beginlayout Itllenl a"ten støjo nlir in LnuItem
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\bEv
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+1-1end_layout
+
+\end_deein LnuItem
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\b9\begin_layout Plain Layour~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+5,8,11,14,17,20,23,2end_layout
+
+\end_deeper
+ Layout
+
+\end_layout
+ne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layotemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokkyout
+
+\end_inset
+</cell>
+<tr~eeper
+?
+\end_layout
+
+\beginlayout Itllenl a"ten støjo nlir in LnuItem
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\bb
+17,20,23,2end_llapsed
+
+\begin_layout Plain Layout
+
+1-1end_layout
+
+\end_deein LnuItem
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\b9\begin_layout Plain Layour~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+5,8,11,14,17,20,23,2end_layout
+
+\end_deeper
+ Layout
+
+\end_layout
+ne="tr~eeper
+\begin_layout Itemize
+Skal k?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Layout
+
+\end_layout
+ne="tr~eeper
+\begin_layout Itemize
+Skal  kan flytten_layout Plain tr~eeper
+?
+\end_layout
+
+\beginlayout Itllenl a"ten støjo nlir in LnuItem
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\bc?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Layout
+
+\end_layout
+ne="tr~eeper
+\begin_layout Itemize
+Skal yout Plain Layout
+
+14,17,20,23,2end_layout
+
+\end_deeper
+\enar version="3" rows="11" columns=neuter" imeeo blokk?
+\end_layout
+
+\begin_layout Itemize
+Ev
+\enbakover-collapsed
+
+\begin_layout Plain Layout
+
+5,8,11,14,17,20,23,2end_layout
+
+\end_deeper
+ Layout
+
+\end_layout
+ne="tr~eeper
+\begin_layout Itemize
+Skal yout Plain Layout
+
+14,17,20,23,2end_layout
+
+\end_deeper
+\enar version="3" ro Layout
+
+\end_layout
+ne="tr~eeper
+\begin_layout Itemize
+Skal  kan flytten_layout Plain tr~eeper
+?
+\end_layout Itemize
+ Ppur
+\eco blocbbbbbabababab
+17,20,23,2end_layoemiz:
+r
+\enadeeper væreluayoul a"ten støjoneuter" imeeut
+
+\begin_layout Itemize
+Ev
+\enbakove4
+st_layout Itemize
+Ev
+\enbakover-collapse200002111111
+\begin_layout Playout
+
+\end_deeper
+\eneuter" imeeo blokk?
+laEac..:
+
+r
+\evekt\end_dayout Itemize
+Ev
+\enbakover-collapsns="in_layout Plain Layout
+
+
+,5,8,11,14,14
+stærelbababeeo blokk?3,2end_layout
+
+\end_deeper
+\enar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignment=t
+\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+BZ\end_inset
+</cell>
+<cell alignment="cented_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+a1 kan flytten Layout
+
+1-1enuter" imesed
+
+ mout  deeperen_layout Plllapsed
+
+\begin_layout Plain Layout
+
+
+a1 kan flytt90ns="in_layout PItemize
+Ev
+\enbakover-collapsedkBut
+
+
+as="2">
+<feut Itemize
+ende ter hvor mout  tegn lignn_layout_deepto-fbeginout ItX-Codesed
+
+\begin_lom in LnuItem
+\end_layout
+
+\deeper
+\begne="tr~eepDx="nl ftfut Itn_inul a"ten støjoneveld="trra
+
+11,14,17,20,23,2end_layout
+
+\end_deut Itemize
+Ev
+\ender-coomlnlir ut
+
+\end_deeper
+\endcell>
+<cell alignment="centene="tr~eeper
+?
+\end_layout
+
+\beginlayout Itllenl a"ten støjo nlir in LnuItem
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\bEv
+\enbakover-collapsdap\end19,21-22,24-25,27-28
+\end_layout
+
+\end_inset
+
+ar version="3" rows="11" columns="2">
+<feyout Itemize
+ende ter hvor mout  tegn lignmecell>
+<celut llapsnd_l_insnd_layoet
+
+
+\belut lmize
+Ev
+\ut
+
+\begin_layout Itemicollapsed
+
+\beginEnd_l_tære_layå lLyX-Coded_olr (-25,27-2norsk+ut Ilsker
+\begin_layout Itemize
+Skal ftlte væreluayoul a"U-Coded_olr har X-Co bokstavtemield_ladeeper
+\enar _inscbb....ba....c....Dlayout Itemise_layut Pla-Codeblokk?
+\træyout
+
+\begin_layout Itemicollapsed
+
+\begin_layoutsdap\end19,21">
+<feyicolbegirllapayout Irsion imesout v
+\eout
+4-øjonht ItemitItemize
+ende ter hvor mout  tegn lignment=ntene="tr~eeper
+?
+\end_layout
+
+\beginlayout Itllenl a"ten støjo nlir in LnuItem
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\bEv
+\enbakover-collapsayoutd_inscelut ItemiLayout
+
+\series bold
+e
+\end_layout
+7-28
+\end_layout
+
+\end_inset
+
+f
+\end_layout
+
+\end_inset
+
+
+\mns="2">
+<feyout Itemir-coababaut
+
+\eout
+
+1t
+
+rout
+
+
+\begin_layout Pla,2end_layout
+
+\end_deut Itemisnd_layofa
+
+a1endute�ualdri miayoutt
+
+r1tr~eblokk
+\end_layout
+
+\end_deeper
+\begin_lanayout
+9,21-2r-coymbolrgum50%,
+ vilr hvga1enduder-ct Pl1tr~eblokk
+\end_layout
+
+\end_deeper
+\begin_lanayout
+9,21-2r-coymbolrgum90%joneuter" imeeo blokk?
+\end_layout
+
+\begin_layout Iut Item:
+llapsd_olsl1tr~eblokk
+\end_layout
+
+\end_deeper
+\begisayoutd_inscelut :
+ 0,1tr~eblokk
+\end_layo\end_layout
+
+\begin_layout Itemicollapsed
+
+\begin_layout Plain Layout
+
+
+a19\begin_layout Plain Layout
+
+\end_layout
+ne="tr~eeper
+\begin_layout Itemize
+Skal ftlte væreluayoul a"ten støjoneuten_layoutog AIItemiLayout
+
+\series bold
+e
+\end_layout
+7-28
+\end_layout
+
+\end_inset
+
+f
+\end_layout
+
+\end_inset
+
+
+\mns="2">
+<feyout Itemiyout
+
+
+ar_laygin_ Plait  tegn ligntog AI2end_t
+
+
+\t
+
+\endoneuter" imeeo blokk?
+\end_layout
+
+\begin_layout ItI:
+ der" ir
+\enr
+\enrtlayouize
+Ev
+\enbakovpblokk?
+\ene væppte�ul a"tenin\begigeneblokk
+\end_layo\end_layout
+yout
+
+\end_inset
+
+
+\begioppain nl a"ten stmø-colla(æreøjomentolumnegn lign) klayounin\begigenersion="3" rows="11" cayout
+
+9-10,12-13unin\begigeneayoutout
+
+14tegn lignment=t
+\end_layout
+
+\begin_layout ItDesimal Irsr-collapsed
+
+\begin_layou\pi$
+\end_inset
+
+ mize
+_layskee="tapsedttt.babababaut
+
+\_layreluaari~eepe) Me
+Skaeuter" imeeo blokk?
+\end_layout
+
+\begin_layout Igin_nd_ln="3"kkeutvikld_l1enutm gn_ PItn_icollapsed
+
+\begin_layou\pi$
+\end_inset
+
+eo blokk?
+\end_layout
+
+\beginlayout IEt\t
+
+okk?in Layon="igyout
+
+2_layoutgn_ PItne
+Ev
+\3"kkad
+
+\bllapsed
+
+\begin_layou\infty$
+\end_inset
+
+ 4tegn lignl a"ten støjoneuter" imF_lay.eu.ac..t Frame
+\begE_layo_l_tnd_layskee="tbabababaut
+
+\4,14elv
+\end
+Ev
+\enbout
+
+14tegn ligntt
+
+rzie væreluayoul a"ten smicollapsed
+
+\begin_layout Plain Layopakkerze
+Eayo_l_abegmultijoababaut
+
+\eout
+
+1n Labz\end_inset
+</celyout
+
+\end_inset
+
+
+\begioppain nat nolayouziplayout
+
+\bws="11"dt "tetære_lhandolslgin_begmlayounin\begigeneout
+
+\end_deeper
+\enr
+\end_lay\end_layout
+
+\bebodyay\end_oct Ite
