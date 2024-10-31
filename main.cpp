@@ -127,8 +127,8 @@ class Compression {
         output.write(reinterpret_cast<char*>(&bitLength), sizeof(bitLength));
 
         // Step 8: Write encoded bitstring to file. Convert bits to bytes
-        for(size_t i = 0; i < bitString.size(); i += 8) {
-            std::bitset<8> bits(bitString.substr(i,8).append(8 - (bitString.size() % 8), '0'));
+        for (size_t i = 0; i < bitString.size(); i += 8) {
+            std::bitset<8> bits(bitString.substr(i, 8).append(8 - (bitString.size() % 8), '0'));
             output.put(static_cast<unsigned char>(bits.to_ulong()));
         }
         output.close();
@@ -208,7 +208,7 @@ class LempelZivCompression {
                 data.push_back(byte);
             }
             size_t dataSize = data.size();
-            size_t bufferSize = 131072;
+            size_t bufferSize = 16384;
 
             // Process each byte in input data
             for (size_t i = 0; i < dataSize; ++i) {
