@@ -1,0 +1,3 @@
+/Users/havardvd/Library/CloudStorage/OneDrive-NTNU/BIDATA/IDATT2101/Oppgaver/Oppgave_6/build/CMakeFiles/compression_test_7.dir
+/Users/havardvd/Library/CloudStorage/OneDrive-NTNU/BIDATA/IDATT2101/Oppgaver/Oppgave_6/build/CMakeFiles/edit_cache.dir
+/Users/havardvd/Library/CloudStorage/OneDrive-NTNU/BIDATA/IDATT2101/Oppgaver/Oppgave_6/build/CMakeFiles/rebuild_cache.dir

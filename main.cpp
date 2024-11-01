@@ -6,6 +6,7 @@
 #include <bitset>
 #include <cstdint>
 #include <string>
+#include "ArithmeticCoding.hpp"
 
 
 // Node of the Huffman tree
@@ -307,7 +308,7 @@ class LempelZivDecompression {
         std::ofstream outputFile;
 };
 
-// Compression functions which encapsulate the main compressin steps
+// Compression functions which encapsulate the main compression steps
 void LZCompressionStep(const std::string& fileName) {
     LempelZivCompression lz;
     lz.initFiles(fileName, "Tempcompressed.txt");
@@ -328,6 +329,19 @@ void HuffDeCompressionStep() {
     Compression huff;
     huff.decompressFile("compressed.txt");
 }
+
+void ArithmeticCompressionStep(const std::string &fileName) {
+    ArithmeticCoding arithmetic;
+    arithmetic.compressFile(fileName, "compressed.txt");
+    std::cout << "File compressed using arithmetic coding to 'compressed.txt'" << std::endl;
+}
+
+void ArithmeticDecompressionStep(const std::string &fileName) {
+    ArithmeticCoding arithmetic;
+    arithmetic.decompressFile("compressed.txt", fileName);
+    std::cout << "File decompressed using arithmetic coding to '" << fileName << "'" << std::endl;
+}
+
 //TODO Better user interface
 //TODO Split functionalit into two programs?
 int main()
@@ -340,10 +354,12 @@ int main()
     std::cin >> choice;
     if (choice == "1") {
         LZCompressionStep("diverse.lyx");
-        HuffCompressionStep();
+        //HuffCompressionStep();
+        ArithmeticCompressionStep("Tempcompressed.txt");
         std::cout << "File compressed to 'compressed.txt'" << std::endl;
     } else if (choice == "2") {
-        HuffDeCompressionStep();
+        //HuffDeCompressionStep();
+        ArithmeticDecompressionStep("diverse_2.lyx");
         LZDecompressionStep("diverse_2.lyx");
         std::cout << "File decompressed" << std::endl;
 

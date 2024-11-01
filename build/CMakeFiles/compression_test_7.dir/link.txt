@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/c++  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/compression_test_7.dir/main.cpp.o CMakeFiles/compression_test_7.dir/arithmeticcoding.cpp.o -o compression_test_7
