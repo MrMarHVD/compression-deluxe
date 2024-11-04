@@ -346,6 +346,7 @@ void ArithmeticDecompressionStep(const std::string &fileName) {
 //TODO Split functionalit into two programs?
 int main()
 {
+    std::string file_name = "enwik8.txt";
     std::string choice;
     std::cout << "Please choose to:" << std::endl;
     std::cout << "1 - Compress"<< std::endl;
@@ -353,14 +354,14 @@ int main()
     std::cout << "Other to exit"<< std::endl;
     std::cin >> choice;
     if (choice == "1") {
-        LZCompressionStep("diverse.lyx");
+        LZCompressionStep(file_name);
         //HuffCompressionStep();
         ArithmeticCompressionStep("Tempcompressed.txt");
         std::cout << "File compressed to 'compressed.txt'" << std::endl;
     } else if (choice == "2") {
         //HuffDeCompressionStep();
-        ArithmeticDecompressionStep("diverse_2.lyx");
-        LZDecompressionStep("diverse_2.lyx");
+        ArithmeticDecompressionStep(file_name);
+        LZDecompressionStep(file_name);
         std::cout << "File decompressed" << std::endl;
 
 
