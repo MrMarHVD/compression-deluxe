@@ -71,7 +71,7 @@ class Compression {
     // Compresses input file with Huffman coding.
     // Compressed data is written to "compressed.txt"
     // TODO Make different compressed files for different input files
-    void compressFile(const std::string &inputFile) {
+    void compressFile(const std::string &inputFile, const std::string &outputFile) {
         std::ifstream input(inputFile, std::ios::binary );
         std::map<char, int> frequencyTable;
         char byte;
@@ -109,7 +109,7 @@ class Compression {
 
         // Step 5: Re-open input file to apply Huffman encoding
         input.open(inputFile, std::ios::binary);
-        std::ofstream output("compressed.txt", std::ios::binary);
+        std::ofstream output(outputFile, std::ios::binary);
 
         // Step 5: Serialize Huffman tree structure
         serializeTree(root, output);
@@ -201,14 +201,14 @@ class LempelZivCompression {
 
     // Compress data by identifying repeated sequences within a sliding window
     //TODO find best bufferSize - Possibly allow user choice for different file sizes
-    void LempelZiv() {
+    void LempelZiv(size_t bufferSize) {
             std::vector<char> data;
             char byte;
             while (inputFile.get(byte)) {
                 data.push_back(byte);
             }
             size_t dataSize = data.size();
-            size_t bufferSize = 16384;
+
 
             // Process each byte in input data
             for (size_t i = 0; i < dataSize; ++i) {
@@ -308,10 +308,10 @@ class LempelZivDecompression {
 };
 
 // Compression functions which encapsulate the main compressin steps
-void LZCompressionStep(const std::string& fileName) {
+void LZCompressionStep(const std::string& fileName, size_t bufferSize) {
     LempelZivCompression lz;
     lz.initFiles(fileName, "Tempcompressed.txt");
-    lz.LempelZiv();
+    lz.LempelZiv(bufferSize);
     lz.closeFiles();
 }
 void LZDecompressionStep(const std::string& fileName) {
@@ -320,32 +320,96 @@ void LZDecompressionStep(const std::string& fileName) {
     lz.Decompression();
     lz.closeFiles();
 }
-void HuffCompressionStep() {
+void HuffCompressionStep(const std::string& compressedFileName) {
     Compression huff;
-    huff.compressFile("Tempcompressed.txt");
+    huff.compressFile("Tempcompressed.txt", compressedFileName);
 }
-void HuffDeCompressionStep() {
+void HuffDeCompressionStep(const std::string& compressedFileName) {
     Compression huff;
-    huff.decompressFile("compressed.txt");
+    huff.decompressFile(compressedFileName);
 }
 //TODO Better user interface
 //TODO Split functionalit into two programs?
 int main()
 {
     std::string choice;
-    std::cout << "Please choose to:" << std::endl;
+    std::cout << "The compression algorithm uses different buffer sizes for LZ for different files" << std::endl;
+    std::cout << "This ensures better compression for diverse.lxy, but allows enwik8 to be compressed" << std::endl;
+    std::cout << "Please choose an option:" << std::endl;
     std::cout << "1 - Compress"<< std::endl;
     std::cout << "2 - Decompress"<< std::endl;
-    std::cout << "Other to exit"<< std::endl;
+    std::cout << "Hit another button to exit"<< std::endl;
     std::cin >> choice;
     if (choice == "1") {
-        LZCompressionStep("diverse.lyx");
-        HuffCompressionStep();
-        std::cout << "File compressed to 'compressed.txt'" << std::endl;
+        std::string choice2;
+        std::cout << "Which file to compress?" << std::endl;
+        std::cout << "1 - diverse.lyx"<< std::endl;
+        std::cout << "2 - enwik8.txt"<< std::endl;
+        std::cout << "3 - Twenty_thousand_leagues_under_the_sea.txt"<< std::endl;
+        std::cout << "4 - opg6-kompr.lyx"<< std::endl;
+        std::cout << "5 - diverse.txt"<< std::endl;
+
+
+
+        std::cin >> choice2;
+        if (choice2 == "1") {
+            LZCompressionStep("diverse.lyx", 32768);
+            HuffCompressionStep("diverse_compressed");
+            std::cout << "File compressed to 'diverse_compressed'" << std::endl;
+        } else if (choice2 == "2") {
+            LZCompressionStep("enwik8.txt", 4096);
+            HuffCompressionStep("enwik8compressed");
+            std::cout << "File compressed to 'enwik8compressed'" << std::endl;
+        } else if (choice2 == "3") {
+            LZCompressionStep("Twenty_thousand_leagues_under_the_sea.txt", 32768);
+            HuffCompressionStep("twenty_thousand_compressed");
+            std::cout << "File compressed to 'twenty_thousand_compressed'" << std::endl;
+        } else if (choice2 == "4") {
+            LZCompressionStep("opg6-kompr.lyx", 4096);
+            HuffCompressionStep("opg6-kompr_compressed");
+            std::cout << "File compressed to 'opg6-kompr_compressed'" << std::endl;
+        } else if (choice2 == "5") {
+            LZCompressionStep("diverse.txt", 32768);
+            HuffCompressionStep("diverse_txt_compressed");
+            std::cout << "File compressed to 'diverse_txt_compressed'" << std::endl;
+        }
     } else if (choice == "2") {
-        HuffDeCompressionStep();
-        LZDecompressionStep("diverse_2.lyx");
-        std::cout << "File decompressed" << std::endl;
+        std::string choice3;
+        std::cout << "Which file to decompress?" << std::endl;
+        std::cout << "1 - diverse.lyx"<< std::endl;
+        std::cout << "2 - enwik8.txt"<< std::endl;
+        std::cout << "3 - Twenty_thousand_leagues_under_the_sea.txt"<< std::endl;
+        std::cout << "4 - opg6-kompr.lyx"<< std::endl;
+        std::cout << "5 - diverse.txt"<< std::endl;
+        std::cin >> choice3;
+        if (choice3 == "1") {
+            HuffDeCompressionStep("diverse_compressed");
+            LZDecompressionStep("diverse_decompressed.lyx"
+                            );
+            std::cout << "File decompressed" << std::endl;
+        } else if (choice3 == "2") {
+            HuffDeCompressionStep("enwik8compressed");
+            LZDecompressionStep("enwik8_decompressed.txt"
+                            );
+            std::cout << "File decompressed" << std::endl;
+        } else if (choice3 == "3") {
+            HuffDeCompressionStep("twenty_thousand_compressed");
+            LZDecompressionStep("Twenty_thousand_leagues_under_the_sea_decompressed.txt"
+                            );
+            std::cout << "File decompressed" << std::endl;
+
+        } else if (choice3 == "4") {
+            HuffDeCompressionStep("opg6-kompr_compressed");
+            LZDecompressionStep("opg6-kompr_sea_decompressed.txt"
+                            );
+            std::cout << "File decompressed" << std::endl;
+        } else if (choice3 == "5") {
+            HuffDeCompressionStep("diverse_txt_compressed");
+            LZDecompressionStep("diverse_decompressed.txt"
+                            );
+            std::cout << "File decompressed" << std::endl;
+        }
+
 
 
     } else {
